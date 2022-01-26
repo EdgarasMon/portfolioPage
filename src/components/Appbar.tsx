@@ -141,7 +141,7 @@ const ResponsiveAppBar = () => {
 							>
 								<Avatar
 									alt="Edgaras Monkus"
-									src="./img/github.jpg"
+									src="/github.png"
 									sx={{ width: 56, height: 56 }}
 								/>
 							</IconButton>

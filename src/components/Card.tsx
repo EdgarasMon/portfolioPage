@@ -8,31 +8,26 @@ import Box from '@mui/material/Box';
 
 export default function ActionAreaCard(props: any) {
 	return (
-		<Card sx={{ maxWidth: 250 }}>
+		<Card sx={{ maxWidth: 200 }}>
 			<CardActionArea>
 				<CardMedia
 					component="img"
-					height="140"
-					image="./img/project/calculator.jpg"
+					height="200"
+					image={props.projectScreenShot}
 					alt="project picture"
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
 						{props.projectName}
 					</Typography>
-					<Typography variant="body2" color="text.secondary">
+					<Typography variant="body2" color="text.primary">
 						{props.projectInfo}
 					</Typography>
-					<Typography variant="body2" color="text.secondary">
+					<Typography variant="body2" color="text.primary">
 						Technologies: {props.technologiesUsed}
 					</Typography>
 					<Box component="span" sx={{ display: 'inline' }}>
-						<Typography variant="body2" color="text.secondary">
-							{' '}
-							Project SRC:
-						</Typography>
-					</Box>
-					<Box component="span" sx={{ display: 'inline' }}>
+						Project Source:{' '}
 						<a href={props.gitHubRepository}>Link</a>
 					</Box>
 				</CardContent>
