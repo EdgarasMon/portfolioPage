@@ -1,0 +1,5 @@
+#menuLinks:focus {
+	outline: none !important;
+	border-bottom: 3px solid white;
+	box-shadow: 0 0 10px white;
+}
