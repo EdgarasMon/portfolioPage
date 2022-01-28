@@ -1,46 +1,69 @@
-import * as React from 'react';
-import ReactDOM from 'react-dom';
-import Appbar from './components/Appbar';
+import AppBar from './components/AppBar';
 import Card from './components/Card';
-import './css/App.sass';
+import './sass/App.sass';
 import Box from '@mui/material/Box';
 import JavascriptRoundedIcon from '@mui/icons-material/JavascriptRounded';
 import HtmlRoundedIcon from '@mui/icons-material/HtmlRounded';
 import CssRoundedIcon from '@mui/icons-material/CssRounded';
+import Tooltip from '@mui/material/Tooltip';
+
+const calculatorScreenshotArray = [
+	'/projects/calculator/2.jpg',
+	'/projects/calculator/3.jpg',
+];
 
 function App() {
 	return (
 		<div id="body">
-			<Appbar />
-
-			<div id="angleDiv">
-				<div id="angleText">
-					<h1>Hi, I'm Edgaras,</h1>
-					<h2>web developer</h2>
+			<AppBar />
+			<Box sx={{ marginTop: 20 }}>
+				<div id="angleDiv">
+					<div id="angleText">
+						<h1>Hi, I'm Edgaras,</h1>
+						<h2>web developer</h2>
+						<h1></h1>
+					</div>
 				</div>
-			</div>
-			<Box sx={{ bgcolor: '#cd9b9b', color: 'white' }}>
-				<h2>My Portfolio</h2>
 			</Box>
-			<div id="angleDiv2">
+			<Box sx={{ bgcolor: '#cd9b9b', color: 'white' }}>
+				<Tooltip title="My portfolio">
+					<h2> 💼</h2>
+				</Tooltip>
+			</Box>
+			<Box id="angleDiv2">
 				<Card
-					projectScreenShot="/project/calculator.jpg"
+					projectScreenShot="/projects/calculator/index.jpg"
 					projectName="Calculator"
 					projectInfo="  This one-pager was created, by learning purposes. Functionalities: 
 				calculation of mulltiple numbers with memory board output, integrated music player, responsive and transitioning
 				 screen desing"
 					technologiesUsed="HTML, CSS, JavaScript"
 					gitHubRepository="https://github.com/EdgarasMon/calculator"
+					calculatorScreenshotArray
 				/>
-				<Card projectName="Shopping-List" projectInfo="" />
-				<Card />
-				<Card />
-			</div>
+
+				{/* <Card
+					projectScreenShot="/projects/shoppingList/dashboard.jpg"
+					projectName="Shopping-List"
+					projectInfo="Site is created for taking notes for grocery lists. Site is for 
+				registered users, but non-registerd users can try it too Functionalities: Add products from text inputs or search
+				products from database and add them too. Then you can save lists to your account and delete them"
+					technologiesUsed="HTML, CSS, JavaScript, localStorage, MongoDB, NodeJS"
+					gitHubRepository="https://github.com/EdgarasMon/ShoppingList"
+					screenShot2="/projects/shoppingList/signup.jpg"
+					screenShot3="/projects/shoppingList/login.jpg"
+					screenShot4="/projects/shoppingList/dashboard.jpg"
+					screenShot5="/projects/shoppingList/searchresults.jpg"
+					screenShot6="/projects/shoppingList/my-lists.jpg"
+				/> */}
+			</Box>
 			<Box sx={{ bgcolor: '#cd9b9b', color: 'white' }}>
 				<div id="angleDiv2"></div>
 			</Box>
 			<Box sx={{ bgcolor: '#f3e88e', color: 'white' }}>
-				<h2>Skills & tools</h2>
+				<Tooltip title="skills & tool">
+					<h2>🖥️ & 🔧</h2>
+				</Tooltip>
 			</Box>
 			<div id="angleDiv3">
 				<HtmlRoundedIcon
@@ -66,11 +89,18 @@ function App() {
 				/>
 			</div>
 			<Box sx={{ bgcolor: '#e8f1d4', color: 'white' }}>
-				<h2>About</h2>
+				<Tooltip title="about">
+					<h2>🤷</h2>
+				</Tooltip>
 			</Box>
 			<div id="angleDiv4">data</div>
 			<div id="angleDiv5">
-				<h2>Contact</h2>
+				<Tooltip title="contact">
+					<h2>📧</h2>
+				</Tooltip>
+			</div>
+			<div id="angleDiv6">
+				© 2022 | Designed & coded by Edgaras Monkus
 			</div>
 		</div>
 	);

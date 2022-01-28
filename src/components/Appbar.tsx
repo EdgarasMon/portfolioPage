@@ -1,3 +1,4 @@
+import '../sounds/click.mp3';
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -11,13 +12,20 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import '../css/Appbar.css';
+import '../sass/AppBar.sass';
+import useSound from 'use-sound';
+const Click = require('../sounds/click.mp3');
 
-const pages = ['home', 'portfolio', 'skills & tools', 'about', 'contact'];
+const pages = ['🏠', '💼', '🖥️ & 🔧', '🤷', '📧'];
+const pageNames = ['home', 'portfolio', 'skills & tools', 'about', 'contact'];
 
 const settings = ['Profile', 'Account', 'Dashboard'];
 
 const ResponsiveAppBar = () => {
+	const usePlaySound = () => {
+		const [playOn] = useSound('../sounds/click.mp3', { volume: 0.5 });
+	};
+
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
 		null
 	);
@@ -41,14 +49,20 @@ const ResponsiveAppBar = () => {
 	};
 
 	return (
-		<AppBar position="static">
+		<AppBar position="fixed" sx={{ background: '#a39aff' }}>
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<Typography
 						variant="h6"
 						noWrap
 						component="div"
-						sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+						sx={{
+							mr: 1,
+							xs: 'none',
+							md: 'flex',
+							fontSize: 10,
+							flexGrow: 1,
+						}}
 					></Typography>
 
 					<Box
@@ -63,6 +77,7 @@ const ResponsiveAppBar = () => {
 							aria-controls="menu-appbar"
 							aria-haspopup="true"
 							onClick={handleOpenNavMenu}
+							onMouseDown={usePlaySound}
 							color="inherit"
 						>
 							<MenuIcon />
@@ -147,7 +162,7 @@ const ResponsiveAppBar = () => {
 							</IconButton>
 						</Tooltip>
 						<Menu
-							sx={{ mt: '45px' }}
+							sx={{ mt: '65px' }}
 							id="menu-appbar"
 							anchorEl={anchorElUser}
 							anchorOrigin={{
