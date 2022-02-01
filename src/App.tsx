@@ -1,10 +1,14 @@
+import * as React from 'react';
 import AppBar from './components/AppBar';
 import Card from './components/Card';
 import Paper from './components/PaperTabs';
+import Contact from './components/Contact';
 import './sass/App.sass';
 import './sass/Card.sass';
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
+import Alert from '@mui/material/Alert';
+import { useState } from 'react';
 
 let calculatorScreenshotArray = [
 	'/projects/calculator/2.jpg',
@@ -21,14 +25,14 @@ let shoppingListScreenShotArray = [
 
 function App() {
 	return (
-		<div id="body">
+		<div className="container">
 			<AppBar />
 			<Box sx={{ marginTop: 10 }}>
-				<div id="angleDiv">
-					<div id="angleText">
+				<div className="angleDiv">
+					<div className="angleText">
 						<h1>Hi, I'm Edgaras,</h1>
 						<h2>web developer</h2>
-						<img id="guy" src="guy.png" />
+						<img className="guyPicture" src="guy.png" />
 					</div>
 				</div>
 			</Box>
@@ -37,7 +41,7 @@ function App() {
 					<h2> 💼 </h2>
 				</Tooltip>
 			</Box>
-			<Box id="angleDiv2">
+			<Box className="angleDiv2">
 				<Card
 					projectScreenShot="/projects/calculator/index.jpg"
 					projectName="Calculator"
@@ -57,18 +61,26 @@ function App() {
 				products from database and add them too. Then you can save lists to your account and delete them"
 					technologiesUsed="HTML, CSS, JavaScript, localStorage, MongoDB, NodeJS"
 					gitHubRepository="https://github.com/EdgarasMon/ShoppingList"
-					shoppingListScreenShotArray={shoppingListScreenShotArray}
+				/>
+
+				<Card
+					projectScreenShot="/projects/shoppingList/dashboard.jpg"
+					projectName="Portfolio-Page"
+					projectInfo="Site is created for projects showing purposes. Functionalities: 
+					interactive React and Material UI components and design, Contact form for sending email"
+					technologiesUsed="React, TypeScript, Material UI, SASS  EmailJS "
+					gitHubRepository="https://github.com/EdgarasMon/portfolioPage"
 				/> */}
 			</Box>
 			<Box sx={{ bgcolor: '#cd9b9b', color: 'white' }}>
-				<div id="angleDiv2"></div>
+				<div className="angleDiv2"></div>
 			</Box>
 			<Box sx={{ bgcolor: '#f3e88e', color: 'white' }}>
 				<Tooltip title="skills & tool">
 					<h2>🖥️ & 🔧</h2>
 				</Tooltip>
 			</Box>
-			<div id="angleDiv3">
+			<div className="angleDiv3">
 				<Paper />
 			</div>
 			<Box sx={{ bgcolor: '#e8f1d4', color: 'white' }}>
@@ -76,13 +88,24 @@ function App() {
 					<h2>🤷</h2>
 				</Tooltip>
 			</Box>
-			<div id="angleDiv4">data</div>
-			<span id="angleDiv5">
+			<div className="angleDiv4">data</div>
+			<div className="angleDiv5">
 				<Tooltip title="contact">
-					<h2>📧</h2>
+					<Box>
+						<h2>📧</h2>
+						<h3>Get In Touch</h3>
+						<p>
+							Dropping a line to say Hi, ask for my resume or see
+							if we can build <br /> something amazing together?
+							I'd love to hear it from you! <br /> Fill in your
+							info in the form below and I look forward to hearing
+							<br /> from you!
+						</p>
+						<Contact />
+					</Box>
 				</Tooltip>
-			</span>
-			<div id="angleDiv6">
+			</div>
+			<div className="angleDiv6">
 				© 2022 | Designed & coded by Edgaras Monkus 👨🏼‍💻
 			</div>
 		</div>

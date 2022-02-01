@@ -94,6 +94,7 @@ export default function ActionAreaCard(props: any) {
 							<Typography paragraph>More ScreenShots:</Typography>
 							{calculatorScreenshotArray.map((imgUrl: any) => (
 								<CardMedia
+									sx={{ mb: 1 }}
 									component="img"
 									height="200"
 									alt="project picture"

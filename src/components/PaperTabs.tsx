@@ -2,8 +2,11 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import CardMedia from '@mui/material/CardMedia';
+import Grid from '@mui/material/Grid';
+import { TableRows } from '@mui/icons-material';
+import { grid } from '@mui/system';
 
-let logoArr = [
+let technologyLogos = [
 	'/technologies/html.png',
 	'/technologies/css.png',
 	'/technologies/css.png',
@@ -19,12 +22,13 @@ let logoArr = [
 
 export default function SimplePaper(props: any) {
 	return (
-		<Box>
-			{logoArr.map(imgUrl => (
+		<Box className="technologyLogos">
+			{technologyLogos.map(imgUrl => (
 				<CardMedia
 					component="img"
 					alt="technology picture"
 					image={imgUrl}
+					className="trial2"
 				/>
 			))}
 		</Box>
