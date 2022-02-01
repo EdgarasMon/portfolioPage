@@ -1,33 +1,40 @@
 import AppBar from './components/AppBar';
 import Card from './components/Card';
+import Paper from './components/PaperTabs';
 import './sass/App.sass';
+import './sass/Card.sass';
 import Box from '@mui/material/Box';
-import JavascriptRoundedIcon from '@mui/icons-material/JavascriptRounded';
-import HtmlRoundedIcon from '@mui/icons-material/HtmlRounded';
-import CssRoundedIcon from '@mui/icons-material/CssRounded';
 import Tooltip from '@mui/material/Tooltip';
 
-const calculatorScreenshotArray = [
+let calculatorScreenshotArray = [
 	'/projects/calculator/2.jpg',
 	'/projects/calculator/3.jpg',
+];
+
+let shoppingListScreenShotArray = [
+	'/projects/shoppingList/signup.jpg',
+	'/projects/shoppingList/login.jpg',
+	'/projects/shoppingList/dashboard.jpg',
+	'/projects/shoppingList/searchresults.jpg',
+	'/projects/shoppingList/my-lists.jpg',
 ];
 
 function App() {
 	return (
 		<div id="body">
 			<AppBar />
-			<Box sx={{ marginTop: 20 }}>
+			<Box sx={{ marginTop: 10 }}>
 				<div id="angleDiv">
 					<div id="angleText">
 						<h1>Hi, I'm Edgaras,</h1>
 						<h2>web developer</h2>
-						<h1></h1>
+						<img id="guy" src="guy.png" />
 					</div>
 				</div>
 			</Box>
 			<Box sx={{ bgcolor: '#cd9b9b', color: 'white' }}>
 				<Tooltip title="My portfolio">
-					<h2> 💼</h2>
+					<h2> 💼 </h2>
 				</Tooltip>
 			</Box>
 			<Box id="angleDiv2">
@@ -39,7 +46,7 @@ function App() {
 				 screen desing"
 					technologiesUsed="HTML, CSS, JavaScript"
 					gitHubRepository="https://github.com/EdgarasMon/calculator"
-					calculatorScreenshotArray
+					calculatorScreenshotArray={calculatorScreenshotArray}
 				/>
 
 				{/* <Card
@@ -50,11 +57,7 @@ function App() {
 				products from database and add them too. Then you can save lists to your account and delete them"
 					technologiesUsed="HTML, CSS, JavaScript, localStorage, MongoDB, NodeJS"
 					gitHubRepository="https://github.com/EdgarasMon/ShoppingList"
-					screenShot2="/projects/shoppingList/signup.jpg"
-					screenShot3="/projects/shoppingList/login.jpg"
-					screenShot4="/projects/shoppingList/dashboard.jpg"
-					screenShot5="/projects/shoppingList/searchresults.jpg"
-					screenShot6="/projects/shoppingList/my-lists.jpg"
+					shoppingListScreenShotArray={shoppingListScreenShotArray}
 				/> */}
 			</Box>
 			<Box sx={{ bgcolor: '#cd9b9b', color: 'white' }}>
@@ -66,27 +69,7 @@ function App() {
 				</Tooltip>
 			</Box>
 			<div id="angleDiv3">
-				<HtmlRoundedIcon
-					sx={{
-						width: 128,
-						height: 128,
-						display: 'inline',
-					}}
-				/>
-				<CssRoundedIcon
-					sx={{
-						width: 128,
-						height: 128,
-						display: 'inline',
-					}}
-				/>
-				<JavascriptRoundedIcon
-					sx={{
-						width: 128,
-						height: 128,
-						display: 'inline',
-					}}
-				/>
+				<Paper />
 			</div>
 			<Box sx={{ bgcolor: '#e8f1d4', color: 'white' }}>
 				<Tooltip title="about">
@@ -94,13 +77,13 @@ function App() {
 				</Tooltip>
 			</Box>
 			<div id="angleDiv4">data</div>
-			<div id="angleDiv5">
+			<span id="angleDiv5">
 				<Tooltip title="contact">
 					<h2>📧</h2>
 				</Tooltip>
-			</div>
+			</span>
 			<div id="angleDiv6">
-				© 2022 | Designed & coded by Edgaras Monkus
+				© 2022 | Designed & coded by Edgaras Monkus 👨🏼‍💻
 			</div>
 		</div>
 	);

@@ -29,6 +29,9 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function ActionAreaCard(props: any) {
+	let calculatorScreenshotArray = props.calculatorScreenshotArray;
+	let shoppingListScreenShotArray = props.shoppingListScreenShotArray;
+
 	const [expanded, setExpanded] = React.useState(false);
 
 	const handleExpandClick = () => {
@@ -88,26 +91,15 @@ export default function ActionAreaCard(props: any) {
 
 					<Collapse in={expanded} timeout="auto" unmountOnExit>
 						<CardContent>
-							<Typography paragraph>
-								More ScreenShots:{' '}
-							</Typography>
-							{/* {props.calculatorScreenshotArray.map(
-								(calculatorScreenshotArray: any) => {
-									<CardMedia
-										component="img"
-										height="200"
-										alt="project picture"
-										image={calculatorScreenshotArray}
-									/>;
-								}
-							)} */}
-							<CardMedia
-								component="img"
-								height="200"
-								alt="project picture"
-								image={props.calculatorScreenshotArray}
-							/>
-							;
+							<Typography paragraph>More ScreenShots:</Typography>
+							{calculatorScreenshotArray.map((imgUrl: any) => (
+								<CardMedia
+									component="img"
+									height="200"
+									alt="project picture"
+									image={imgUrl}
+								/>
+							))}
 						</CardContent>
 					</Collapse>
 				</CardContent>

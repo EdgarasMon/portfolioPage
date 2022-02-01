@@ -22,9 +22,9 @@ const pageNames = ['home', 'portfolio', 'skills & tools', 'about', 'contact'];
 const settings = ['Profile', 'Account', 'Dashboard'];
 
 const ResponsiveAppBar = () => {
-	const usePlaySound = () => {
-		const [playOn] = useSound('../sounds/click.mp3', { volume: 0.5 });
-	};
+	// const usePlaySound = () => {
+	// 	const [playOn] = useSound('../sounds/click.mp3', { volume: 0.5 });
+	// };
 
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
 		null
@@ -77,7 +77,7 @@ const ResponsiveAppBar = () => {
 							aria-controls="menu-appbar"
 							aria-haspopup="true"
 							onClick={handleOpenNavMenu}
-							onMouseDown={usePlaySound}
+							// onMouseDown={usePlaySound}
 							color="inherit"
 						>
 							<MenuIcon />
