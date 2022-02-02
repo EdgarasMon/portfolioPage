@@ -3,6 +3,8 @@ import AppBar from './components/AppBar';
 import Card from './components/Card';
 import Paper from './components/PaperTabs';
 import Contact from './components/Contact';
+import TimeLine from './components/TimeLine';
+import SocialMedia from './components/SocialMedia';
 import './sass/App.sass';
 import './sass/Card.sass';
 import Box from '@mui/material/Box';
@@ -27,18 +29,36 @@ function App() {
 	return (
 		<div className="container">
 			<AppBar />
-			<Box sx={{ marginTop: 10 }}>
-				<div className="angleDiv">
+			<div className="angleDiv">
+				<Box
+					component="div"
+					sx={{
+						display: 'inline',
+						p: 1,
+						m: 1,
+					}}
+				>
 					<div className="angleText">
-						<h1>Hi, I'm Edgaras,</h1>
-						<h2>web developer</h2>
+						<p>Hi, I'm Edgaras,</p>
+						<p>web developer</p>
 						<img className="guyPicture" src="guy.png" />
 					</div>
-				</div>
-			</Box>
-			<Box sx={{ bgcolor: '#cd9b9b', color: 'white' }}>
+				</Box>
+				<Box
+					component="div"
+					sx={{
+						display: 'inline',
+						p: 10,
+						m: 1,
+					}}
+				>
+					<TimeLine />
+				</Box>
+			</div>
+
+			<Box sx={{ bgcolor: '#cd9b9b' }}>
 				<Tooltip title="My portfolio">
-					<h2> 💼 </h2>
+					<h1> 💼 </h1>
 				</Tooltip>
 			</Box>
 			<Box className="angleDiv2">
@@ -72,27 +92,48 @@ function App() {
 					gitHubRepository="https://github.com/EdgarasMon/portfolioPage"
 				/> */}
 			</Box>
-			<Box sx={{ bgcolor: '#cd9b9b', color: 'white' }}>
+			<Box sx={{ bgcolor: '#cd9b9b' }}>
 				<div className="angleDiv2"></div>
 			</Box>
-			<Box sx={{ bgcolor: '#f3e88e', color: 'white' }}>
-				<Tooltip title="skills & tool">
-					<h2>🖥️ & 🔧</h2>
+			<Box sx={{ bgcolor: '#f3e88e' }}>
+				<Tooltip title="skills / tools">
+					<h1>🖥️ / 🔧</h1>
 				</Tooltip>
 			</Box>
 			<div className="angleDiv3">
 				<Paper />
 			</div>
-			<Box sx={{ bgcolor: '#e8f1d4', color: 'white' }}>
+			<Box sx={{ bgcolor: '#e8f1d4' }}>
 				<Tooltip title="about">
-					<h2>🤷</h2>
+					<h1>🤷</h1>
 				</Tooltip>
 			</Box>
 			<div className="angleDiv4">data</div>
 			<div className="angleDiv5">
+				<Tooltip title="social media">
+					<Box
+						component="div"
+						sx={{
+							display: 'inline',
+							p: 1,
+							m: 1,
+						}}
+					>
+						<h1>📲</h1>
+						<br />
+						<SocialMedia />
+					</Box>
+				</Tooltip>
 				<Tooltip title="contact">
-					<Box>
-						<h2>📧</h2>
+					<Box
+						component="div"
+						sx={{
+							display: 'inline',
+							p: 1,
+							m: 1,
+						}}
+					>
+						<h1>📧</h1>
 						<h3>Get In Touch</h3>
 						<p>
 							Dropping a line to say Hi, ask for my resume or see
@@ -101,6 +142,7 @@ function App() {
 							info in the form below and I look forward to hearing
 							<br /> from you!
 						</p>
+						<br />
 						<Contact />
 					</Box>
 				</Tooltip>

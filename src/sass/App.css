@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300&family=Neonderthaw&display=swap");
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-repeat: inherit;
+  background-size: cover;
+}
+
+.angleText {
+  font-family: 'Neonderthaw', cursive;
+  -webkit-transform: skewY(3deg);
+          transform: skewY(3deg);
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+}
+
+.angleDiv {
+  background-color: #fee8d6;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.angleDiv:after {
+  background: inherit;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  -webkit-transform: skewY(4deg);
+          transform: skewY(4deg);
+  -webkit-transform-origin: 32;
+          transform-origin: 32;
+  z-index: -1;
+}
+
+.guyPicture {
+  width: 350px;
+  height: auto;
+}
+
+.angleDiv2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  justify-items: center;
+  background: inherit;
+  background-color: #cd9b9b;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.angleDiv2:after {
+  background: inherit;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 60%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  -webkit-transform: skewY(356deg);
+          transform: skewY(356deg);
+  -webkit-transform-origin: 32;
+          transform-origin: 32;
+  z-index: -1;
+}
+
+.angleDiv3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: inherit;
+  background-color: #f3e88e;
+  z-index: 1;
+  height: auto;
+}
+
+.angleDiv5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: inherit;
+  background-color: #e9c2a6;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.angleDiv6 {
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  background: inherit;
+  background-color: #7fb964;
+  color: #000000;
+  position: relative;
+  z-index: 1;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+h2 {
+  text-align: center;
+}
+/*# sourceMappingURL=App.css.map */

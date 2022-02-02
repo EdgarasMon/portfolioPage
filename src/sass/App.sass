@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300&family=Neonderthaw&display=swap'
+
 $accentColor: #fee8d6
 $whiteColor: #fff
 $blackColor: #000000
@@ -5,33 +7,43 @@ $peachColor: #cd9b9b
 $citrusColor: #f3e88e
 $orangeColor: #e9c2a6	
 $kiwiColor: #7fb964
+$neonBlueColor: #099FFF
+$neonPurpleColor: #9900FF
 
 $displayFlex: flex
 $displayGrid: grid
 
-
-
-
-.container
+.container	
 	display: flex
 	flex-direction: column
-	flex-wrap: wrap
+	// flex-wrap: wrap
 	// background: url('./../img/background.jpg')
 	background-repeat: inherit
 	background-size: cover
 
-.angleText 
+p
+	margin: 0
+
+.angleText
+	margin-top: 80px 
+	font-family: 'Neonderthaw', cursive
 	transform: skewY(3deg)
 	display: grid
 	justify-content: center
 	justify-items: center
-
-
+	color: $neonBlueColor
+	font-size: 50px
+	font-weight: bold
+	
 .angleDiv 
 	background-color: $accentColor
-	color: $whiteColor
 	position: relative
 	z-index: 1
+	display: flex
+	justify-content: center
+	flex-direction: row
+	flex-wrap: wrap
+	
 
 
 .angleDiv:after 
@@ -39,7 +51,7 @@ $displayGrid: grid
 	bottom: 0
 	content: ''
 	display: block
-	height: 50%
+	height: 35%
 	left: 0
 	position: absolute
 	right: 0
@@ -47,9 +59,12 @@ $displayGrid: grid
 	transform-origin: 32
 	z-index: -1
 
+
 .guyPicture
 	width: 350px
 	height: auto
+	$neonBlueColor: #099FFF
+
 
 .angleDiv2 
 	display: flex
@@ -77,62 +92,26 @@ $displayGrid: grid
 	z-index: -1
 
 .angleDiv3 
+	display: flex
 	background: inherit
 	background-color: $citrusColor
-	position: relative
-	z-index: 1
-	width: 150px
+	z-index: 1	
 	height: auto
-
-
-.angleDiv3:after 
-	background: inherit
-	bottom: 0
-	content: ''
-	display: block
-	height: 65%
-	left: 0
-	position: absolute
-	right: 0
-	transform: skewY(5deg)
-	transform-origin: 32
-	z-index: -1
- 
-
-// .angleDiv4 
-// 	display: grid
-// 	justify-content: center
-// 	justify-items: center
-// 	background: inherit
-// 	background-color: #e8f1d4
-// 	color: $whiteColor
-// 	position: relative
-// 	z-index: 1
-
-// .angleDiv4:after 
-// 	background: inherit
-// 	bottom: 0
-// 	content: ''
-// 	display: block
-// 	height: 65%
-// 	left: 0
-// 	position: absolute
-// 	right: 0
-// 	transform: skewY(358deg)
-// 	transform-origin: 32
-// 	z-index: -1
-  
 
 .angleDiv5 
 	display: flex
-	flex-direction: column
-	flex-wrap: wrap
+	flex-direction: row
+	flex-wrap: wrap	
+	justify-content: center
 	align-items: center
 	background: inherit
 	background-color: $orangeColor
-	color: $whiteColor
+	color: $neonPurpleColor
 	position: relative
 	z-index: 1
+	justify-content: space-evenly
+	align-items: flex-start
+	
 
 .angleDiv6 	
 	text-align: center
@@ -148,6 +127,6 @@ $displayGrid: grid
 	padding-bottom: 5px
  
 
-h2 
+h1, h2 
 	text-align: center
  

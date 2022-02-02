@@ -1,0 +1,6 @@
+.project:hover {
+  outline: none !important;
+  -webkit-box-shadow: 0 0 20px #099FFF;
+          box-shadow: 0 0 20px #099FFF;
+}
+/*# sourceMappingURL=Project.css.map */

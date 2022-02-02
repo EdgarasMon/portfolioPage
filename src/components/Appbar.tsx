@@ -16,7 +16,7 @@ import '../sass/AppBar.sass';
 import useSound from 'use-sound';
 const Click = require('../sounds/click.mp3');
 
-const pages = ['🏠', '💼', '🖥️ & 🔧', '🤷', '📧'];
+const pages = ['🏠', '💼', '🖥️  🔧', '🤷', '📲 📧'];
 const pageNames = ['home', 'portfolio', 'skills & tools', 'about', 'contact'];
 
 const settings = ['Profile', 'Account', 'Dashboard'];
@@ -131,14 +131,14 @@ const ResponsiveAppBar = () => {
 					>
 						{pages.map(page => (
 							<Button
-								id="menuLinks"
+								className="menuLinks"
 								key={page}
 								onClick={handleCloseNavMenu}
 								sx={{
 									my: 2,
 									color: 'white',
 									// fontWeight: 'medium',
-									fontSize: 18,
+									fontSize: 20,
 									display: 'block',
 									borderRadius: 0,
 								}}
@@ -149,15 +149,16 @@ const ResponsiveAppBar = () => {
 					</Box>
 
 					<Box sx={{ flexGrow: 0 }}>
-						<Tooltip title="Open settings">
+						<Tooltip title="Open Bio">
 							<IconButton
 								onClick={handleOpenUserMenu}
 								sx={{ p: 0 }}
 							>
 								<Avatar
+									className="avatar"
 									alt="Edgaras Monkus"
 									src="/github.png"
-									sx={{ width: 56, height: 56 }}
+									sx={{ width: 50, height: 50 }}
 								/>
 							</IconButton>
 						</Tooltip>

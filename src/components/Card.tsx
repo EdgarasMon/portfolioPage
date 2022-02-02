@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../sass/Card.sass';
+import '../sass/Project.sass';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -10,8 +10,6 @@ import { styled } from '@mui/material/styles';
 import Collapse from '@mui/material/Collapse';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { positions } from '@mui/system';
-import { Screenshot } from '@mui/icons-material';
 
 interface ExpandMoreProps extends IconButtonProps {
 	expand: boolean;
@@ -40,7 +38,7 @@ export default function ActionAreaCard(props: any) {
 
 	return (
 		<Card
-			id="card"
+			className="project"
 			sx={{
 				maxWidth: 300,
 				margin: 1,
