@@ -65,7 +65,6 @@ export default function ColorTextFields() {
 					name="name"
 					onChange={e => setName(e.target.value)}
 					label="Name"
-					color="secondary"
 				/>{' '}
 				<br />
 				<TextField
@@ -73,7 +72,6 @@ export default function ColorTextFields() {
 					name="Subject"
 					onChange={e => setSubject(e.target.value)}
 					label="Subject"
-					color="secondary"
 				/>{' '}
 				<br />
 				<TextField
@@ -81,7 +79,6 @@ export default function ColorTextFields() {
 					name="message"
 					onChange={e => setMessage(e.target.value)}
 					label="Message"
-					color="secondary"
 					multiline
 					rows={6}
 					sx={{
@@ -94,13 +91,11 @@ export default function ColorTextFields() {
 				<br />
 				<TextField
 					label="E-mail"
-					color="secondary"
 					onChange={e => setEmail(e.target.value)}
 				/>{' '}
 				<br />
 				<Button
 					onClick={submitValue}
-					color="secondary"
 					variant="contained"
 					endIcon={<SendIcon />}
 					sx={{

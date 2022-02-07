@@ -1,27 +1,28 @@
 import * as React from 'react';
-import Timeline from '@material-ui/lab/Timeline';
-import TimelineItem from '@material-ui/lab/TimelineItem';
-import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
-import TimelineConnector from '@material-ui/lab/TimelineConnector';
-import TimelineContent from '@material-ui/lab/TimelineContent';
-import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
-import TimelineDot from '@material-ui/lab/TimelineDot';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import HotelIcon from '@mui/icons-material/Hotel';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import Typography from '@mui/material/Typography';
+import type {} from '@mui/lab/themeAugmentation';
 
 export default function CustomizedTimeline() {
 	return (
-		<Timeline>
+		<Timeline position="alternate">
 			<TimelineItem>
 				<TimelineOppositeContent
 					sx={{
 						m: 'auto 0',
 						align: 'right',
 						variant: 'body2',
-						color: 'text.secondary',
+						color: 'white',
 					}}
 				>
 					8:00 am
@@ -33,8 +34,8 @@ export default function CustomizedTimeline() {
 					</TimelineDot>
 					<TimelineConnector />
 				</TimelineSeparator>
-				<TimelineContent sx={{ py: '12px', px: 2 }}>
-					<Typography variant="h6" component="span">
+				<TimelineContent sx={{ py: '12px', px: 2, color: 'white' }}>
+					<Typography variant="h6" component="span" color="white">
 						Eat
 					</Typography>
 					<Typography>Because you need strength</Typography>
@@ -44,7 +45,7 @@ export default function CustomizedTimeline() {
 				<TimelineOppositeContent
 					sx={{ m: 'auto 0' }}
 					variant="body2"
-					color="text.secondary"
+					color="white"
 				>
 					9:00 am
 				</TimelineOppositeContent>
@@ -55,7 +56,7 @@ export default function CustomizedTimeline() {
 					</TimelineDot>
 					<TimelineConnector />
 				</TimelineSeparator>
-				<TimelineContent sx={{ py: '12px', px: 2 }}>
+				<TimelineContent sx={{ py: '12px', px: 2, color: 'white' }}>
 					<Typography variant="h6" component="span">
 						Code
 					</Typography>
@@ -70,7 +71,7 @@ export default function CustomizedTimeline() {
 					</TimelineDot>
 					<TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
 				</TimelineSeparator>
-				<TimelineContent sx={{ py: '12px', px: 2 }}>
+				<TimelineContent sx={{ py: '12px', px: 2, color: 'white' }}>
 					<Typography variant="h6" component="span">
 						Sleep
 					</Typography>
@@ -85,7 +86,7 @@ export default function CustomizedTimeline() {
 					</TimelineDot>
 					<TimelineConnector />
 				</TimelineSeparator>
-				<TimelineContent sx={{ py: '12px', px: 2 }}>
+				<TimelineContent sx={{ py: '12px', px: 2, color: 'white' }}>
 					<Typography variant="h6" component="span">
 						Repeat
 					</Typography>

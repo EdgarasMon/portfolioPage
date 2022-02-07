@@ -1,47 +1,60 @@
-import Box from '@mui/material/Box';
-import CardMedia from '@mui/material/CardMedia';
-
-let technologyLogos = [
-	'/technologies/html.png',
-	'/technologies/css.png',
-	'/technologies/sass.png',
-	'/technologies/javas.png',
-	'/technologies/react.png',
-	'/technologies/python.png',
-	'/technologies/mongodb.png',
-	'/technologies/node.png',
-	'/technologies/mysql.png',
-];
-
-let toolsLogos = [
-	'/tools/vscode.png',
-	'/tools/localstorage.png',
-	'/tools/emailjs.png',
-];
+import * as React from 'react';
+import Tooltip from '@mui/material/Tooltip';
 
 export default function SimplePaper(props: any) {
 	return (
-		<div className="paper">
-			<Box className="technologyLogos">
-				{technologyLogos.map(imgUrl => (
-					<CardMedia
-						component="img"
-						alt="technology picture"
-						image={imgUrl}
-						className="trial2"
+		<React.Fragment>
+			<div className="technologyLogos">
+				<figure>
+					<img src="/technologies/html.png" width="90" height="90" />
+				</figure>
+				<figure>
+					<img src="/technologies/css.png" width="90" height="90" />
+				</figure>
+				<figure>
+					<img src="/technologies/sass.png" width="90" height="90" />
+				</figure>
+				<figure>
+					<img src="/technologies/javas.png" width="90" height="90" />
+				</figure>
+				<figure>
+					<img src="/technologies/react.png" width="90" height="90" />
+				</figure>
+				<figure>
+					<img
+						src="/technologies/python.png"
+						width="90"
+						height="90"
 					/>
-				))}
-			</Box>
-			<Box className="toolsLogos">
-				{toolsLogos.map(imgUrl => (
-					<CardMedia
-						component="img"
-						alt="tool picture"
-						image={imgUrl}
-						className="trial3"
+				</figure>
+				<figure>
+					<img
+						src="/technologies/mongodb.png"
+						width="90"
+						height="90"
 					/>
-				))}
-			</Box>
-		</div>
+				</figure>
+				<figure>
+					<img src="/technologies/node.png" width="90" height="90" />
+				</figure>
+				<figure>
+					<img src="/technologies/mysql.png" width="90" height="90" />
+				</figure>
+			</div>
+			<div className="toolsLogos">
+				<figure>
+					<img src="/tools/vscode.png" width="90" height="90" />
+				</figure>
+				<figure>
+					<img src="/tools/localstorage.png" width="90" height="90" />
+				</figure>
+				<figure>
+					<img src="/tools/emailjs.png" width="90" height="90" />
+				</figure>
+				<figure>
+					<img src="/tools/hcapha.png" width="90" height="90" />
+				</figure>
+			</div>
+		</React.Fragment>
 	);
 }

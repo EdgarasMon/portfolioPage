@@ -10,6 +10,8 @@ import { styled } from '@mui/material/styles';
 import Collapse from '@mui/material/Collapse';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 interface ExpandMoreProps extends IconButtonProps {
 	expand: boolean;
@@ -40,19 +42,23 @@ export default function ActionAreaCard(props: any) {
 		<Card
 			className="project"
 			sx={{
-				maxWidth: 300,
+				maxWidth: 320,
 				margin: 1,
 				marginBottom: 5,
-				maxHeight: 'auto',
+				Height: 'auto',
+				borderRadius: 3,
+				background: '#d2d3ff',
 			}}
 		>
 			<CardActionArea>
-				<CardMedia
-					component="img"
-					height="200"
-					image={props.projectScreenShot}
-					alt="project picture"
-				/>
+				<Zoom>
+					<CardMedia
+						component="img"
+						height="250"
+						image={props.projectScreenShot}
+						alt="project picture"
+					/>
+				</Zoom>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
 						{props.projectName}
@@ -72,7 +78,8 @@ export default function ActionAreaCard(props: any) {
 						⚙️: {props.technologiesUsed}
 					</Typography>
 					<Box component="span" sx={{ display: 'inline' }}>
-						💾: <a href={props.gitHubRepository}>Repository</a>
+						💾:{' '}
+						<a href={props.gitHubRepository}>Github repository</a>
 					</Box>
 
 					<ExpandMore
@@ -80,7 +87,7 @@ export default function ActionAreaCard(props: any) {
 						onClick={handleExpandClick}
 						aria-expanded={expanded}
 						aria-label="show more"
-						sx={{ left: 140 }}
+						sx={{ left: 120 }}
 					>
 						<Tooltip title="More ScreenShots..">
 							<ExpandMoreIcon sx={{ right: 40 }} />
@@ -91,13 +98,15 @@ export default function ActionAreaCard(props: any) {
 						<CardContent>
 							<Typography paragraph>More ScreenShots:</Typography>
 							{calculatorScreenshotArray.map((imgUrl: any) => (
-								<CardMedia
-									sx={{ mb: 1 }}
-									component="img"
-									height="200"
-									alt="project picture"
-									image={imgUrl}
-								/>
+								<Zoom>
+									<CardMedia
+										sx={{ mb: 1 }}
+										component="img"
+										height="200"
+										alt="project picture"
+										image={imgUrl}
+									/>
+								</Zoom>
 							))}
 						</CardContent>
 					</Collapse>
