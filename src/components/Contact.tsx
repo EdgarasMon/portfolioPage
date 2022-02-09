@@ -6,12 +6,14 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { init } from '@emailjs/browser';
 init('user_iLKSGUev9BJGVQHQvEIsw');
+const SITE_KEY = '6LdUBWYeAAAAAFujSrcEyZWcs-yRCw8pLGgtRBaK';
 
 export default function ColorTextFields() {
+	let window: any;
 	const [name, setName] = useState('');
 	const [subject, setSubject] = useState('');
 	const [message, setMessage] = useState('');
@@ -20,7 +22,7 @@ export default function ColorTextFields() {
 	const [emailSent, setEmailSent] = useState(false);
 	const [emailSendError, setEmailSendError] = useState(false);
 
-	const submitValue = () => {
+	function onFormSubmit(e: any) {
 		const emailDetails = {
 			Name: name,
 			Subject: subject,
@@ -29,7 +31,15 @@ export default function ColorTextFields() {
 		};
 		console.log(emailDetails);
 		sendFeedback(emailDetails);
-	};
+		e.preventDefault();
+		window.grecaptcha.ready(function () {
+			window.grecaptcha
+				.execute(SITE_KEY, { action: 'submit' })
+				.then(function (token: any) {
+					// Send form value as well as token to the server
+				});
+		});
+	}
 
 	const sendFeedback = (emailDetails: any) => {
 		emailjs
@@ -47,12 +57,10 @@ export default function ColorTextFields() {
 			});
 	};
 
-	console.log('emailSent ', emailSent);
-	console.log('emailSendError ', emailSendError);
-
 	return (
-		<form>
+		<form id="submitForm">
 			<Box
+				id="app"
 				component="form"
 				sx={{
 					'& > :not(style)': { m: 1, width: '55ch' },
@@ -65,6 +73,7 @@ export default function ColorTextFields() {
 					name="name"
 					onChange={e => setName(e.target.value)}
 					label="Name"
+					required
 				/>{' '}
 				<br />
 				<TextField
@@ -72,6 +81,7 @@ export default function ColorTextFields() {
 					name="Subject"
 					onChange={e => setSubject(e.target.value)}
 					label="Subject"
+					required
 				/>{' '}
 				<br />
 				<TextField
@@ -79,6 +89,7 @@ export default function ColorTextFields() {
 					name="message"
 					onChange={e => setMessage(e.target.value)}
 					label="Message"
+					required
 					multiline
 					rows={6}
 					sx={{
@@ -91,11 +102,13 @@ export default function ColorTextFields() {
 				<br />
 				<TextField
 					label="E-mail"
+					required
 					onChange={e => setEmail(e.target.value)}
 				/>{' '}
 				<br />
 				<Button
-					onClick={submitValue}
+					data-action="submit"
+					onClick={e => onFormSubmit(e)}
 					variant="contained"
 					endIcon={<SendIcon />}
 					sx={{
@@ -129,7 +142,7 @@ export default function ColorTextFields() {
 						</Alert>
 					)}
 				</Box>
-				<Box sx={{ p: 3 }}></Box>
+				<Box sx={{ p: 5 }}></Box>
 			</Box>
 		</form>
 	);

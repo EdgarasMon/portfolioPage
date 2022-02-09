@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import AppBar from './components/AppBar';
 import Card from './components/Card';
 import Paper from './components/PaperTabs';
@@ -9,36 +9,7 @@ import './sass/App.sass';
 import './sass/Card.sass';
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
-
-// const { verify } = require('hcaptcha');
-
-// const secret = 'my hcaptcha secret from hcaptcha.com';
-// const token = 'token from widget';
-
-// verify(secret, token)
-// 	.then((data: any) => {
-// 		if (data.success === true) {
-// 			console.log('success!', data);
-// 		} else {
-// 			console.log('verification failed');
-// 		}
-// 	})
-// 	.catch(console.error);
-
-let calculatorScreenshots = [
-	'/projects/calculator/2.jpg',
-	'/projects/calculator/3.jpg',
-];
-
-let shoppingListScreenShots = [
-	'/projects/shoppingList/signup.jpg',
-	'/projects/shoppingList/login.jpg',
-	'/projects/shoppingList/dashboard.jpg',
-	'/projects/shoppingList/searchresults.jpg',
-	'/projects/shoppingList/my-lists.jpg',
-];
-
-let portfolioPagescreenShots = ['/projects/portfolioPage/portfolio.png'];
+import ReactDOM from 'react-dom';
 
 function App() {
 	return (
@@ -115,28 +86,25 @@ function App() {
 				 screen desing."
 					technologiesUsed="HTML, CSS, JavaScript"
 					gitHubRepository="https://github.com/EdgarasMon/calculator"
-					calculatorScreenshotArray={calculatorScreenshots}
 				/>
 
 				<Card
 					projectScreenShot="/projects/shoppingList/dashboard.jpg"
 					projectName="Shopping-List"
-					projectInfo="Site is created for taking notes for grocery lists. Site is for 
-				registered users, but non-registerd users can try it too Functionalities: Add products from text inputs or search
+					projectInfo="Site is created for taking notes of grocery products. Site is for 
+				registered users, but non-registerd users can try it too. Functionalities: Add products from text inputs or search
 				products from database and add them too. Then you can save lists to your account and delete them."
 					technologiesUsed="HTML, CSS, JavaScript, localStorage, MongoDB, NodeJS"
 					gitHubRepository="https://github.com/EdgarasMon/ShoppingList"
-					calculatorScreenshotArray={shoppingListScreenShots}
 				/>
 
 				<Card
-					projectScreenShot="/projects/portfolioPage/portfolio.png"
+					projectScreenShot="/projects/portfolioPage/portfolio.jpg"
 					projectName="Portfolio-Page"
 					projectInfo="Site is created for projects showing purposes. Functionalities: 
 					interactive React and Material UI components and design, Contact form for sending email."
-					technologiesUsed="React, TypeScript, Material UI, SASS, EmailJS, hCaptcha"
+					technologiesUsed="React, TypeScript, Material UI, SASS, EmailJS, reCaptcha-V3"
 					gitHubRepository="https://github.com/EdgarasMon/portfolioPage"
-					calculatorScreenshotArray={portfolioPagescreenShots}
 				/>
 			</Box>
 			<Box sx={{ bgcolor: '#cd9b9b' }}>
@@ -146,23 +114,35 @@ function App() {
 				<Tooltip title="skills / tools">
 					<h1>🖥️ 🔧</h1>
 				</Tooltip>
+				<div className="skilsAndToolsDiv">
+					<Paper />
+					<div className="skilsAndToolsDivsChild"></div>
+				</div>
 			</Box>
-			<div className="skilsAndToolsDiv">
-				<Paper />
-			</div>
+
 			<Box sx={{ bgcolor: '#c5c7ff' }}>
-				<Tooltip title="about">
+				<Tooltip title="about Me">
 					<h1>🤷</h1>
 				</Tooltip>
 			</Box>
-			<div className="aboutDiv">data</div>
+			<div className="aboutDivContainer">
+				<div className="aboutDiv">
+					{' '}
+					Experienced Telecommunications Engineer with a demonstrated
+					history of working in the telecommunications industry.
+					Skilled in Network Installation, English, Wireless Routers,
+					Fiber to the Home (FTTH), and Software Installation. Strong
+					engineering professional with a Bachelor's degree focused in
+					Information Technology from Šiauliu Universitetas.
+				</div>
+			</div>
 			<div className="contactDiv">
 				<Box
 					component="div"
 					sx={{
 						display: 'inline',
 						p: 1,
-						m: 1,
+						m: 0,
 					}}
 				>
 					<Tooltip title="social media">
@@ -184,13 +164,15 @@ function App() {
 						<h1>📧</h1>
 					</Tooltip>
 					<h3>Get In Touch</h3>
-					<p>
-						Dropping a line to say Hi, ask for my resume or see if
-						we can build <br /> something amazing together? I'd love
-						to hear it from you! <br /> Fill in your info in the
-						form below and I look forward to hearing
-						<br /> from you!
-					</p>
+					<div className="getInTouchContainer">
+						<p className="getInTouchChild">
+							{' '}
+							Dropping a line to say Hi, ask for my resume or see
+							if we can build something amazing together? I'd love
+							to hear it from you! Fill in your info in the form
+							below and I look forward to hearing from you!
+						</p>
+					</div>
 					<br />
 					<Contact />
 				</Box>

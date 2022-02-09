@@ -13,8 +13,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import '../sass/AppBar.sass';
-import useSound from 'use-sound';
-const Click = require('../sounds/click.mp3');
+// import useSound from 'use-sound';
+// const Click = require('../sounds/click.mp3');
 
 const pages = ['🏠', '💼', '🖥️  🔧', '🤷', '📲 📧'];
 const pageNames = ['home', 'portfolio', 'skills & tools', 'about', 'contact'];
@@ -25,6 +25,15 @@ const ResponsiveAppBar = () => {
 	// const usePlaySound = () => {
 	// 	const [playOn] = useSound('../sounds/click.mp3', { volume: 0.5 });
 	// };
+
+	// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	// 	anchor.addEventListener('click', function (e) {
+	// 		e.preventDefault();
+	// 		document.querySelector(this.getAttribute('href')).scrollIntoView({
+	// 			behavior: 'smooth',
+	// 		});
+	// 	});
+	// });
 
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
 		null
@@ -104,11 +113,7 @@ const ResponsiveAppBar = () => {
 								<MenuItem
 									key={page}
 									onClick={handleCloseNavMenu}
-								>
-									<Typography textAlign="center">
-										{page}
-									</Typography>
-								</MenuItem>
+								></MenuItem>
 							))}
 						</Menu>
 					</Box>

@@ -8,12 +8,9 @@ $skillsAndToolsColor: #b9bbff
 $aboutColor: #c5c7ff
 $contactColor: #d2d3ff
 
-
-
 $whiteColor: #fff
 $blackColor: #000000
 $neonBlueColor: #099FFF
-
 
 $displayFlex: flex
 $displayGrid: grid
@@ -39,9 +36,6 @@ body::-webkit-scrollbar-thumb
   background-color: $neonBlueColor 
   border-radius: 3px
   border: 2px solid $neonBlueColor    
-
-p
-    margin: 0
 
 h1, h2 
     text-align: center	
@@ -73,7 +67,7 @@ h1, h2
     color: $whiteColor
     font-size: 50px
     font-weight: bold
-    text-shadow: 5px 5px 5px $neonBlueColor
+    text-shadow: 5px 5px 35px $neonBlueColor
     
 .homepageAngledDiv 
     background-color: $homepageColor
@@ -134,11 +128,23 @@ h1, h2
     height: auto
     justify-content: center
 
-.aboutDiv
+.skilsAndToolsDivsChild
+    margin-bottom: 50px    
+
+.aboutDivContainer
     background: $aboutColor
     display: flex
     justify-content: center
-    justify-items: center
+
+.aboutDiv
+    width: 700px
+    font-size: 20px
+    background-color: $contactColor
+    white-space: pre-wrap
+    margin-bottom: 50px
+    margin-top: 20px
+    border-radius: 8px
+    text-align: justify
 
 .contactDiv 
     display: flex
@@ -153,6 +159,19 @@ h1, h2
     z-index: 1
     justify-content: space-evenly
     align-items: flex-start
+
+.getInTouchContainer
+    display: flex
+    justify-content: flex-start
+
+.getInTouchChild      
+    width: 500px
+    font-size: 18px
+    background: $aboutColor
+    white-space: pre-wrap
+    border-radius: 8px
+    margin: 5px
+    text-align: justify
 
 .footerDiv
     text-align: center
@@ -189,4 +208,14 @@ h1, h2
 .footerText    
     text-align: center
     background-color: $wawesColor
+    height: 65px
+    display: flex
+    justify-content: center
+    align-items: center
+    
+    
+.grecaptcha-badge 
+    bottom: 5px !important
+
+   
 

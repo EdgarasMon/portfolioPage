@@ -4,7 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, Tooltip } from '@mui/material';
+import { Tooltip } from '@mui/material';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Collapse from '@mui/material/Collapse';
@@ -29,8 +29,20 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function ActionAreaCard(props: any) {
-	let calculatorScreenshotArray = props.calculatorScreenshotArray;
-	let shoppingListScreenShotArray = props.shoppingListScreenShotArray;
+	let calculatorScreenshots = [
+		'/projects/calculator/2.jpg',
+		'/projects/calculator/3.jpg',
+	];
+
+	let shoppingListScreenShots = [
+		'/projects/shoppingList/signup.jpg',
+		'/projects/shoppingList/login.jpg',
+		'/projects/shoppingList/dashboard.jpg',
+		'/projects/shoppingList/searchresults.jpg',
+		'/projects/shoppingList/my-lists.jpg',
+	];
+
+	let portfolioPageScreenShots = ['/projects/portfolioPage/portfolio.jpg'];
 
 	const [expanded, setExpanded] = React.useState(false);
 
@@ -43,14 +55,15 @@ export default function ActionAreaCard(props: any) {
 			className="project"
 			sx={{
 				maxWidth: 320,
-				margin: 1,
-				marginBottom: 5,
+				margin: 3,
+				marginTop: 10,
+				marginBottom: 10,
 				Height: 'auto',
 				borderRadius: 3,
 				background: '#d2d3ff',
 			}}
 		>
-			<CardActionArea>
+			<React.Fragment>
 				<Zoom>
 					<CardMedia
 						component="img"
@@ -87,7 +100,7 @@ export default function ActionAreaCard(props: any) {
 						onClick={handleExpandClick}
 						aria-expanded={expanded}
 						aria-label="show more"
-						sx={{ left: 120 }}
+						sx={{ left: 100 }}
 					>
 						<Tooltip title="More ScreenShots..">
 							<ExpandMoreIcon sx={{ right: 40 }} />
@@ -97,21 +110,64 @@ export default function ActionAreaCard(props: any) {
 					<Collapse in={expanded} timeout="auto" unmountOnExit>
 						<CardContent>
 							<Typography paragraph>More ScreenShots:</Typography>
-							{calculatorScreenshotArray.map((imgUrl: any) => (
-								<Zoom>
-									<CardMedia
-										sx={{ mb: 1 }}
-										component="img"
-										height="200"
-										alt="project picture"
-										image={imgUrl}
-									/>
-								</Zoom>
-							))}
+
+							{calculatorScreenshots.map((imgUrl: any, index) => {
+								return (
+									<Zoom key={index}>
+										{props.projectName == 'Calculator' && (
+											<CardMedia
+												key={index}
+												component="img"
+												height="200"
+												alt="project picture"
+												image={imgUrl}
+											/>
+										)}
+									</Zoom>
+								);
+							})}
+
+							{shoppingListScreenShots.map(
+								(imgUrl: any, index: any) => {
+									return (
+										<Zoom key={index}>
+											{props.projectName ==
+												'Shopping-List' && (
+												<CardMedia
+													key={index}
+													component="img"
+													height="200"
+													alt="project picture"
+													image={imgUrl}
+												/>
+											)}
+										</Zoom>
+									);
+								}
+							)}
+
+							{portfolioPageScreenShots.map(
+								(imgUrl: any, index: any) => {
+									return (
+										<Zoom key={index}>
+											{props.projectName ==
+												'Portfolio-Page' && (
+												<CardMedia
+													key={index}
+													component="img"
+													height="200"
+													alt="project picture"
+													image={imgUrl}
+												/>
+											)}
+										</Zoom>
+									);
+								}
+							)}
 						</CardContent>
 					</Collapse>
 				</CardContent>
-			</CardActionArea>
+			</React.Fragment>
 		</Card>
 	);
 }

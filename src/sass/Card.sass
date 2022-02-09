@@ -1,16 +1,18 @@
+$homepageColor: #a1a3f2
+
 .technologyLogos, .toolsLogos
     display: flex
     position: relative
     flex-direction: row
     flex-wrap: wrap
-    margin-left: 100px
-    padding-bottom: 70px
+    margin-left: 100px   
+    background: $homepageColor
+    border-radius: 8px
+    display: flex
+    justify-content: center 
 
 img
     margin: 10px 
-
-
-
 
     
 /* Shine */
@@ -59,18 +61,14 @@ body
     transition: .3s ease-in-out
     opacity: 0
 
-figure 
-
+figure
     margin: 0
-    padding: 0
-    
+    padding: 0    
     overflow: hidden
 
 figure:hover+span 
     bottom: -36px
     opacity: 1
-
-
 
 .technologyLogos figure 
     position: relative
