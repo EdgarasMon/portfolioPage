@@ -51,7 +51,7 @@
 	height: auto;
 }
 
-.projectsAngledDiv {
+.projects {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -98,7 +98,7 @@
 	height: auto;
 }
 
-.contactDiv {
+.contact {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -118,7 +118,7 @@
 	z-index: 1;
 }
 
-.footerDiv {
+.footer {
 	text-align: center;
 	display: -ms-grid;
 	display: grid;

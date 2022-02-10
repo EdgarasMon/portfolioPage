@@ -13,46 +13,30 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import '../sass/AppBar.sass';
-// import useSound from 'use-sound';
-// const Click = require('../sounds/click.mp3');
-
+import useSound from 'use-sound';
+const Click = require('../sounds/click.mp3');
 const pages = ['🏠', '💼', '🖥️  🔧', '🤷', '📲 📧'];
 const pageNames = ['home', 'portfolio', 'skills & tools', 'about', 'contact'];
-
 const settings = ['Profile', 'Account', 'Dashboard'];
-
 const ResponsiveAppBar = () => {
 	// const usePlaySound = () => {
 	// 	const [playOn] = useSound('../sounds/click.mp3', { volume: 0.5 });
 	// };
-
-	// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-	// 	anchor.addEventListener('click', function (e) {
-	// 		e.preventDefault();
-	// 		document.querySelector(this.getAttribute('href')).scrollIntoView({
-	// 			behavior: 'smooth',
-	// 		});
-	// 	});
-	// });
-
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
 		null
 	);
 	const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
 		null
 	);
-
 	const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
 		setAnchorElNav(event.currentTarget);
 	};
 	const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
 		setAnchorElUser(event.currentTarget);
 	};
-
 	const handleCloseNavMenu = () => {
 		setAnchorElNav(null);
 	};
-
 	const handleCloseUserMenu = () => {
 		setAnchorElUser(null);
 	};
@@ -73,7 +57,6 @@ const ResponsiveAppBar = () => {
 							flexGrow: 1,
 						}}
 					></Typography>
-
 					<Box
 						sx={{
 							flexGrow: 1,
@@ -113,7 +96,11 @@ const ResponsiveAppBar = () => {
 								<MenuItem
 									key={page}
 									onClick={handleCloseNavMenu}
-								></MenuItem>
+								>
+									<Typography textAlign="center">
+										{page}
+									</Typography>
+								</MenuItem>
 							))}
 						</Menu>
 					</Box>
@@ -122,7 +109,7 @@ const ResponsiveAppBar = () => {
 						noWrap
 						component="div"
 						sx={{
-							flexGrow: 1,
+							flexGrow: 10,
 							display: { xs: 'flex', md: 'none' },
 						}}
 					>
@@ -142,7 +129,6 @@ const ResponsiveAppBar = () => {
 								sx={{
 									my: 2,
 									color: 'white',
-									// fontWeight: 'medium',
 									fontSize: 20,
 									display: 'block',
 									borderRadius: 0,
@@ -152,8 +138,7 @@ const ResponsiveAppBar = () => {
 							</Button>
 						))}
 					</Box>
-
-					<Box sx={{ flexGrow: 0 }}>
+					<Box sx={{ flexGrow: 2 }}>
 						<Tooltip title="Open Bio">
 							<IconButton
 								onClick={handleOpenUserMenu}
@@ -168,7 +153,7 @@ const ResponsiveAppBar = () => {
 							</IconButton>
 						</Tooltip>
 						<Menu
-							sx={{ mt: '65px' }}
+							sx={{ mt: '60px' }}
 							id="menu-appbar"
 							anchorEl={anchorElUser}
 							anchorOrigin={{

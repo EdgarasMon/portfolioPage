@@ -16,38 +16,23 @@ function App() {
 		<div className="container">
 			<AppBar />
 
-			<div className="homepageAngledDiv">
-				<Box
-					component="div"
-					sx={{
-						display: 'inline',
-						p: 1,
-						m: 1,
-					}}
-				>
-					<div className="neonText">
+			<div className="homepage">
+				<div>
+					<div className="homepageText">
 						<p>Hi, I'm Edgaras,</p>
 						<p>web developer</p>
-						<img
-							alt="Guypicture"
-							className="guyPicture"
-							src="guy.png"
-						/>
 					</div>
-				</Box>
-				<Box
-					component="div"
-					sx={{
-						display: 'inline',
-						p: 10,
-						m: 1,
-					}}
-				>
-					<Box sx={{ mt: 20 }}>
-						<TimeLine />
-					</Box>
-				</Box>
-				<div className="topWawe">
+					<img
+						alt="Guypicture"
+						className="guyPicture"
+						src="guy.png"
+					/>
+				</div>
+				<div>
+					<TimeLine />
+				</div>
+
+				<div className="topDecoration">
 					<svg
 						data-name="Layer 1"
 						xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +62,7 @@ function App() {
 					<h1> 💼 </h1>
 				</Tooltip>
 			</Box>
-			<Box className="projectsAngledDiv">
+			<Box className="projects">
 				<Card
 					projectScreenShot="/projects/calculator/index.jpg"
 					projectName="Calculator"
@@ -86,6 +71,7 @@ function App() {
 				 screen desing."
 					technologiesUsed="HTML, CSS, JavaScript"
 					gitHubRepository="https://github.com/EdgarasMon/calculator"
+					siteUrl="https://edgarasmon.github.io/calculator/"
 				/>
 
 				<Card
@@ -108,15 +94,15 @@ function App() {
 				/>
 			</Box>
 			<Box sx={{ bgcolor: '#cd9b9b' }}>
-				<div className="projectsAngledDiv"></div>
+				<div className="projects"></div>
 			</Box>
 			<Box sx={{ bgcolor: '#b9bbff' }}>
 				<Tooltip title="skills / tools">
 					<h1>🖥️ 🔧</h1>
 				</Tooltip>
-				<div className="skilsAndToolsDiv">
+				<div className="skilsAndTools">
 					<Paper />
-					<div className="skilsAndToolsDivsChild"></div>
+					<div className="skilsAndToolsChild"></div>
 				</div>
 			</Box>
 
@@ -125,61 +111,45 @@ function App() {
 					<h1>🤷</h1>
 				</Tooltip>
 			</Box>
-			<div className="aboutDivContainer">
-				<div className="aboutDiv">
+			<div className="aboutContainer">
+				<div className="about">
 					{' '}
 					Experienced Telecommunications Engineer with a demonstrated
 					history of working in the telecommunications industry.
 					Skilled in Network Installation, English, Wireless Routers,
 					Fiber to the Home (FTTH), and Software Installation. Strong
 					engineering professional with a Bachelor's degree focused in
-					Information Technology from Šiauliu Universitetas.
+					Information Technology from ŠU.
 				</div>
 			</div>
-			<div className="contactDiv">
-				<Box
-					component="div"
-					sx={{
-						display: 'inline',
-						p: 1,
-						m: 0,
-					}}
-				>
+			<div className="contact">
+				<div className="socialMedia">
 					<Tooltip title="social media">
 						<h1>📲</h1>
 					</Tooltip>
-					<br />
 					<SocialMedia />
-				</Box>
+				</div>
 
-				<Box
-					component="div"
-					sx={{
-						display: 'inline',
-						p: 1,
-						m: 1,
-					}}
-				>
+				<div className="getInTouchContainer">
 					<Tooltip title="contact">
 						<h1>📧</h1>
 					</Tooltip>
-					<h3>Get In Touch</h3>
-					<div className="getInTouchContainer">
-						<p className="getInTouchChild">
-							{' '}
-							Dropping a line to say Hi, ask for my resume or see
-							if we can build something amazing together? I'd love
-							to hear it from you! Fill in your info in the form
-							below and I look forward to hearing from you!
-						</p>
+					<p className="getInTouchChild">
+						<h3>Get In Touch</h3>
+						Dropping a line to say Hi, ask for my resume or see if
+						we can build something amazing together? I'd love to
+						hear it from you! Fill in your info in the form below
+						and I look forward to hearing from you!
+					</p>
+					<div className="getInTouchForm">
+						<Contact />
 					</div>
-					<br />
-					<Contact />
-				</Box>
+				</div>
+				<br />
 			</div>
 
-			<div className="footerDiv">
-				<div className="bottomWawe">
+			<div className="footer">
+				<div className="bottomDecoration">
 					<svg
 						data-name="Layer 1"
 						xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,5 @@
-@import 'https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300&family=Neonderthaw&display=swap'
-
+//@import 'https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300&family=Neonderthaw&display=swap'
+@import 'https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Crimson+Pro:wght@300&family=Monoton&family=Neonderthaw&family=Raleway+Dots&family=Sora&display=swap'
 
 $wawesColor: #8185f3
 $homepageColor: #a1a3f2
@@ -15,70 +15,80 @@ $neonBlueColor: #099FFF
 $displayFlex: flex
 $displayGrid: grid
 
+html, body 
+    min-height: 100%
+    min-width: 100%
+    background-color: $homepageColor
 
 .container	
     display: flex
     flex-direction: column
-    background-repeat: inherit
+    //background-repeat: inherit
     background-size: cover
+    background: $wawesColor
 
 body::-webkit-scrollbar 
   width: 10px
 
 body
   scrollbar-width: thin
-  scrollbar-color: $wawesColor
+  scrollbar-color: $contactColor
 
 body::-webkit-scrollbar-track 
-  background: $wawesColor
+  background: $contactColor
 
 body::-webkit-scrollbar-thumb 
-  background-color: $neonBlueColor 
+  background-color: $wawesColor
   border-radius: 3px
-  border: 2px solid $neonBlueColor    
+  border: 2px solid $wawesColor    
 
 h1, h2 
     text-align: center	
 
-.topWawe
+.topDecoration
     position: absolute
     top: 0%
     left: 0
     width: 100%
     overflow: hidden
     line-height: 0
+    margin-bottom: 3rem
 
-.topWawe svg 
+.topDecoration svg 
     position: relative
     display: block
     width: calc(300% + 1.3px)
     height: 220px
 
-.topWawe .shape-fill 
+.topDecoration
+    shape-fill 
     fill: $wawesColor
 
-.neonText
-    margin-top: 180px 
-    font-family: 'Neonderthaw', cursive
-    transform: skewY(3deg)
-    display: grid
-    justify-content: center
-    justify-items: center
-    color: $whiteColor
-    font-size: 50px
-    font-weight: bold
-    text-shadow: 5px 5px 35px $neonBlueColor
-    
-.homepageAngledDiv 
+.homepage
     background-color: $homepageColor
     position: relative
     z-index: 1
     display: flex
-    justify-content: center
     flex-direction: row
     flex-wrap: wrap
+    justify-content: center
+    align-items: baseline
+
+.homepageText
+    margin-top: 200px 
+    font-family: 'Bungee Inline', cursive
+    display: grid
+    justify-content: center
+    justify-items: center
+    color: $whiteColor
+    font-size: 35px
+    text-shadow: 5px 5px 35px $neonBlueColor
+    p
+        margin: 0rem auto
     
-.homepageAngledDiv:after 
+
+    
+.homepage:after 
     background: inherit
     bottom: 0
     content: ''
@@ -87,15 +97,16 @@ h1, h2
     left: 0
     position: absolute
     right: 0
-    transform: skewY(4deg)
+    transform: skewY(8deg)
     transform-origin: 32
     z-index: -1
 
 .guyPicture
     width: 350px
     height: auto
+    
 
-.projectsAngledDiv 
+.projects 
     display: flex
     justify-content: center
     flex-direction: row
@@ -106,8 +117,9 @@ h1, h2
     color: $whiteColor
     position: relative
     z-index: 1
- 
-.projectsAngledDiv:after 
+    text-decoration: none
+
+.projects:after 
     background: inherit
     bottom: 0
     content: ''
@@ -120,23 +132,28 @@ h1, h2
     transform-origin: 32
     z-index: -1
 
-.skilsAndToolsDiv 
+    
+
+.skilsAndTools
     display: flex
     background: inherit
     background-color: #b9bbff
     z-index: 1	
     height: auto
     justify-content: center
+    flex-direction: column
+    flex-wrap: wrap
+    align-content: center
 
-.skilsAndToolsDivsChild
+.skilsAndToolsChild
     margin-bottom: 50px    
 
-.aboutDivContainer
+.aboutContainer
     background: $aboutColor
     display: flex
     justify-content: center
 
-.aboutDiv
+.about
     width: 700px
     font-size: 20px
     background-color: $contactColor
@@ -145,35 +162,42 @@ h1, h2
     margin-top: 20px
     border-radius: 8px
     text-align: justify
+    padding: 2%
 
-.contactDiv 
+.contact
     display: flex
-    flex-direction: row
-    flex-wrap: wrap	
-    justify-content: center
-    align-items: center
-    background: inherit
     background-color: $contactColor
-    color: $blackColor
     position: relative
-    z-index: 1
-    justify-content: space-evenly
-    align-items: flex-start
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
 
 .getInTouchContainer
     display: flex
-    justify-content: flex-start
+    flex-direction: column
+    flex-wrap: wrap
 
 .getInTouchChild      
-    width: 500px
+    width: 300px
     font-size: 18px
     background: $aboutColor
     white-space: pre-wrap
-    border-radius: 8px
-    margin: 5px
+    border-radius: 8px    
     text-align: justify
+    padding: 5%
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    margin-bottom: 20px 
 
-.footerDiv
+.contactForm
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    width: 330px
+
+.footer
     text-align: center
     display: grid
     justify-content: center
@@ -186,7 +210,7 @@ h1, h2
     padding-top: 5px
     padding-bottom: 5px
  
-.bottomWawe
+.bottomDecoration
     position: absolute
     bottom: 0
     left: 0
@@ -195,27 +219,25 @@ h1, h2
     line-height: 0
     transform: rotate(180deg)
 
-.bottomWawe svg 
+.bottomDecoration svg 
     position: relative
     display: block
     width: calc(100% + 1.3px)
     height: 55px
     transform: rotateY(180deg)
 
-.bottomWawe .shape-fill 
+.bottomDecoration .shape-fill 
     fill: $wawesColor
 
 .footerText    
     text-align: center
     background-color: $wawesColor
-    height: 65px
+    height: 70px
     display: flex
     justify-content: center
     align-items: center
     
-    
-.grecaptcha-badge 
-    bottom: 5px !important
+// .grecaptcha-badge 
+//     visibility: hidden
 
-   
 

@@ -34,7 +34,7 @@ export default function CustomizedTimeline() {
 					</TimelineDot>
 					<TimelineConnector />
 				</TimelineSeparator>
-				<TimelineContent sx={{ py: '12px', px: 2, color: 'white' }}>
+				<TimelineContent sx={{ py: '14px', px: 2, color: 'white' }}>
 					<Typography variant="h6" component="span" color="white">
 						Eat
 					</Typography>
@@ -56,7 +56,7 @@ export default function CustomizedTimeline() {
 					</TimelineDot>
 					<TimelineConnector />
 				</TimelineSeparator>
-				<TimelineContent sx={{ py: '12px', px: 2, color: 'white' }}>
+				<TimelineContent sx={{ py: '14px', px: 2, color: 'white' }}>
 					<Typography variant="h6" component="span">
 						Code
 					</Typography>
@@ -71,7 +71,7 @@ export default function CustomizedTimeline() {
 					</TimelineDot>
 					<TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
 				</TimelineSeparator>
-				<TimelineContent sx={{ py: '12px', px: 2, color: 'white' }}>
+				<TimelineContent sx={{ py: '14px', px: 2, color: 'white' }}>
 					<Typography variant="h6" component="span">
 						Sleep
 					</Typography>
@@ -86,7 +86,7 @@ export default function CustomizedTimeline() {
 					</TimelineDot>
 					<TimelineConnector />
 				</TimelineSeparator>
-				<TimelineContent sx={{ py: '12px', px: 2, color: 'white' }}>
+				<TimelineContent sx={{ py: '14px', px: 2, color: 'white' }}>
 					<Typography variant="h6" component="span">
 						Repeat
 					</Typography>

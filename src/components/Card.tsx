@@ -3,6 +3,7 @@ import '../sass/Project.sass';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Tooltip } from '@mui/material';
 import Box from '@mui/material/Box';
@@ -56,8 +57,6 @@ export default function ActionAreaCard(props: any) {
 			sx={{
 				maxWidth: 320,
 				margin: 3,
-				marginTop: 10,
-				marginBottom: 10,
 				Height: 'auto',
 				borderRadius: 3,
 				background: '#d2d3ff',
@@ -67,7 +66,6 @@ export default function ActionAreaCard(props: any) {
 				<Zoom>
 					<CardMedia
 						component="img"
-						height="250"
 						image={props.projectScreenShot}
 						alt="project picture"
 					/>
@@ -95,12 +93,32 @@ export default function ActionAreaCard(props: any) {
 						<a href={props.gitHubRepository}>Github repository</a>
 					</Box>
 
+					<a href={props.siteUrl} target="_blank">
+						<Button
+							href={props.siteUrl}
+							component="span"
+							variant="contained"
+							sx={{
+								display: 'block',
+								mt: 3,
+								textAlign: 'center',
+								backgroundColor: '#8185f3',
+
+								'&:hover': {
+									backgroundColor: '#a1a3f2',
+								},
+							}}
+						>
+							Go to Site
+						</Button>
+					</a>
+
 					<ExpandMore
 						expand={expanded}
 						onClick={handleExpandClick}
 						aria-expanded={expanded}
 						aria-label="show more"
-						sx={{ left: 100 }}
+						sx={{ left: 120, mt: 1.5 }}
 					>
 						<Tooltip title="More ScreenShots..">
 							<ExpandMoreIcon sx={{ right: 40 }} />
@@ -118,7 +136,6 @@ export default function ActionAreaCard(props: any) {
 											<CardMedia
 												key={index}
 												component="img"
-												height="200"
 												alt="project picture"
 												image={imgUrl}
 											/>
@@ -136,7 +153,6 @@ export default function ActionAreaCard(props: any) {
 												<CardMedia
 													key={index}
 													component="img"
-													height="200"
 													alt="project picture"
 													image={imgUrl}
 												/>
@@ -155,7 +171,6 @@ export default function ActionAreaCard(props: any) {
 												<CardMedia
 													key={index}
 													component="img"
-													height="200"
 													alt="project picture"
 													image={imgUrl}
 												/>
