@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, {
+	useRef,
+	forwardRef,
+	useState,
+	useEffect,
+	useCallback,
+} from 'react';
 import AppBar from './components/AppBar';
 import Card from './components/Card';
 import Paper from './components/PaperTabs';
@@ -11,7 +17,29 @@ import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
 import ReactDOM from 'react-dom';
 
+import * as Scroll from 'react-scroll';
+import {
+	Link,
+	Button,
+	Element,
+	Events,
+	animateScroll as scroll,
+	scrollSpy,
+	scroller,
+} from 'react-scroll';
+
 function App() {
+	let Link = Scroll.Link;
+	let Button = Scroll.Button;
+	let Element = Scroll.Element;
+	let Events = Scroll.Events;
+	let scroll = Scroll.animateScroll;
+	let scrollSpy = Scroll.scrollSpy;
+
+	const handleSetActive = (to: any) => {
+		console.log(to);
+	};
+
 	return (
 		<div className="container">
 			<AppBar />
@@ -28,8 +56,71 @@ function App() {
 						src="guy.png"
 					/>
 				</div>
+
 				<div>
 					<TimeLine />
+				</div>
+
+				<div>
+					<Link
+						activeClass="active"
+						to="homepage"
+						spy={true}
+						smooth={true}
+						offset={-64}
+						duration={2000}
+						onSetActive={handleSetActive}
+					>
+						home
+					</Link>
+					<br />
+					<Link
+						activeClass="active"
+						to="projects"
+						spy={true}
+						smooth={true}
+						offset={-160}
+						duration={2000}
+						onSetActive={handleSetActive}
+					>
+						portfolio
+					</Link>
+					<br />
+					<Link
+						activeClass="active"
+						to="skilsAndTools"
+						spy={true}
+						smooth={true}
+						offset={-160}
+						duration={2000}
+						onSetActive={handleSetActive}
+					>
+						skilsAndTools
+					</Link>
+					<br />
+					<Link
+						activeClass="active"
+						to="about"
+						spy={true}
+						smooth={true}
+						offset={-160}
+						duration={2000}
+						onSetActive={handleSetActive}
+					>
+						about
+					</Link>
+					<br />
+					<Link
+						activeClass="active"
+						to="contact"
+						spy={true}
+						smooth={true}
+						offset={-64}
+						duration={2000}
+						onSetActive={handleSetActive}
+					>
+						contact
+					</Link>
 				</div>
 
 				<div className="topDecoration">
@@ -122,6 +213,7 @@ function App() {
 					Information Technology from ŠU.
 				</div>
 			</div>
+
 			<div className="contact">
 				<div className="socialMedia">
 					<Tooltip title="social media">
@@ -134,8 +226,10 @@ function App() {
 					<Tooltip title="contact">
 						<h1>📧</h1>
 					</Tooltip>
+
 					<p className="getInTouchChild">
-						<h3>Get In Touch</h3>
+						<span>Get In Touch</span>
+						<br />
 						Dropping a line to say Hi, ask for my resume or see if
 						we can build something amazing together? I'd love to
 						hear it from you! Fill in your info in the form below
@@ -179,5 +273,4 @@ function App() {
 		</div>
 	);
 }
-
 export default App;

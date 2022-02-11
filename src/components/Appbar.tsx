@@ -1,5 +1,7 @@
-import '../sounds/click.mp3';
 import * as React from 'react';
+import { useRef, useState, useEffect, Ref } from 'react';
+import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,16 +14,28 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import Contact from './Contact';
 import '../sass/AppBar.sass';
 import useSound from 'use-sound';
-const Click = require('../sounds/click.mp3');
+//import click from '../sounds/click.mp3';
+
 const pages = ['🏠', '💼', '🖥️  🔧', '🤷', '📲 📧'];
 const pageNames = ['home', 'portfolio', 'skills & tools', 'about', 'contact'];
 const settings = ['Profile', 'Account', 'Dashboard'];
 const ResponsiveAppBar = () => {
-	// const usePlaySound = () => {
-	// 	const [playOn] = useSound('../sounds/click.mp3', { volume: 0.5 });
-	// };
+	const audioTune = new Audio('../sounds/click.mp3');
+
+	const usePlaySound = () => {
+		useEffect(() => {
+			audioTune.load();
+		}, []);
+		audioTune.play();
+	};
+
+	const executeScroll = () => {
+		console.log('working');
+	};
+
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
 		null
 	);
@@ -69,7 +83,7 @@ const ResponsiveAppBar = () => {
 							aria-controls="menu-appbar"
 							aria-haspopup="true"
 							onClick={handleOpenNavMenu}
-							// onMouseDown={usePlaySound}
+							onMouseDown={usePlaySound}
 							color="inherit"
 						>
 							<MenuIcon />
@@ -93,10 +107,7 @@ const ResponsiveAppBar = () => {
 							}}
 						>
 							{pages.map(page => (
-								<MenuItem
-									key={page}
-									onClick={handleCloseNavMenu}
-								>
+								<MenuItem key={page} onClick={executeScroll}>
 									<Typography textAlign="center">
 										{page}
 									</Typography>
@@ -125,7 +136,7 @@ const ResponsiveAppBar = () => {
 							<Button
 								className="menuLinks"
 								key={page}
-								onClick={handleCloseNavMenu}
+								onClick={executeScroll}
 								sx={{
 									my: 2,
 									color: 'white',

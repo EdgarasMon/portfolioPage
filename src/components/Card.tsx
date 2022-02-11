@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import '../sass/Project.sass';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';

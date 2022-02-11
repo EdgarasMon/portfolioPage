@@ -59,91 +59,89 @@ export default function ColorTextFields() {
 	};
 
 	return (
-		<form id="submitForm">
-			<Box id="app" component="form" noValidate autoComplete="off">
-				<div className="contactForm">
-					<TextField
-						type="text"
-						name="name"
-						onChange={e => setName(e.target.value)}
-						label="Name"
-						required
-					/>{' '}
-					<br />
-					<TextField
-						type="text"
-						name="Subject"
-						onChange={e => setSubject(e.target.value)}
-						label="Subject"
-						required
-					/>{' '}
-					<br />
-					<TextField
-						type="text"
-						name="message"
-						onChange={e => setMessage(e.target.value)}
-						label="Message"
-						required
-						multiline
-						rows={6}
-						sx={{
-							'& > :not(style)': {
-								height: '20ch',
-								textAlign: 'left',
-							},
-						}}
-					/>
-					<br />
-					<TextField
-						label="E-mail"
-						required
-						onChange={e => setEmail(e.target.value)}
-					/>{' '}
-					<br />
-					<Button
-						data-action="submit"
-						onClick={e => onFormSubmit(e)}
-						variant="contained"
-						endIcon={<SendIcon />}
-						sx={{
-							fontSize: 15,
-							width: 'auto',
-							backgroundColor: '#8185f3',
+		<Box id="app" component="form" noValidate autoComplete="off">
+			<div className="contactForm" id="contact">
+				<TextField
+					type="text"
+					name="name"
+					onChange={e => setName(e.target.value)}
+					label="Name"
+					required
+				/>{' '}
+				<br />
+				<TextField
+					type="text"
+					name="Subject"
+					onChange={e => setSubject(e.target.value)}
+					label="Subject"
+					required
+				/>{' '}
+				<br />
+				<TextField
+					type="text"
+					name="message"
+					onChange={e => setMessage(e.target.value)}
+					label="Message"
+					required
+					multiline
+					rows={6}
+					sx={{
+						'& > :not(style)': {
+							height: '20ch',
+							textAlign: 'left',
+						},
+					}}
+				/>
+				<br />
+				<TextField
+					label="E-mail"
+					required
+					onChange={e => setEmail(e.target.value)}
+				/>{' '}
+				<br />
+				<Button
+					data-action="submit"
+					onClick={e => onFormSubmit(e)}
+					variant="contained"
+					endIcon={<SendIcon />}
+					sx={{
+						fontSize: 15,
+						width: 'auto',
+						backgroundColor: '#8185f3',
 
-							'&:hover': {
-								backgroundColor: '#a1a3f2',
-							},
-						}}
-					>
-						Send
-					</Button>
-					<Box>
-						{emailSent && (
-							<Alert
-								severity="success"
-								onClose={() => {
-									setEmailSent(false);
-								}}
-							>
-								Email successfully sent!
-							</Alert>
-						)}
-					</Box>
-					<Box>
-						{emailSendError && (
-							<Alert
-								severity="error"
-								onClose={() => {
-									setEmailSendError(false);
-								}}
-							>
-								Email didn't sent!
-							</Alert>
-						)}
-					</Box>
-				</div>
-				<Box sx={{ p: 5 }}></Box>
-			</Box>
-		</form>
+						'&:hover': {
+							backgroundColor: '#a1a3f2',
+						},
+					}}
+				>
+					Send
+				</Button>
+				<Box>
+					{emailSent && (
+						<Alert
+							severity="success"
+							onClose={() => {
+								setEmailSent(false);
+							}}
+						>
+							Email successfully sent!
+						</Alert>
+					)}
+				</Box>
+				<Box>
+					{emailSendError && (
+						<Alert
+							severity="error"
+							onClose={() => {
+								setEmailSendError(false);
+							}}
+						>
+							Email didn't sent!
+						</Alert>
+					)}
+				</Box>
+			</div>
+			<Box sx={{ p: 5 }}></Box>
+		</Box>
 	);
 }
