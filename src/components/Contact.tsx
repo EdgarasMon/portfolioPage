@@ -12,6 +12,7 @@ import emailjs from '@emailjs/browser';
 import { init } from '@emailjs/browser';
 init('user_iLKSGUev9BJGVQHQvEIsw');
 const SITE_KEY = '6LdUBWYeAAAAAFujSrcEyZWcs-yRCw8pLGgtRBaK';
+const messageSound = new Audio(require('../sounds/message.mp3'));
 
 export default function ColorTextFields() {
 	let window: any;
@@ -48,6 +49,8 @@ export default function ColorTextFields() {
 			.then((res: any) => {
 				console.log('Email successfully sent!');
 				setEmailSent(true);
+				messageSound.volume = 0.4;
+				messageSound.play();
 			})
 			.catch((err: any) => {
 				console.error(

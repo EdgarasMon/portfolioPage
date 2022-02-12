@@ -75,14 +75,14 @@ export default function ActionAreaCard(props: any) {
 						{props.projectName}
 					</Typography>
 					<Typography
-						sx={{ mb: 1.5 }}
+						sx={{ mb: 1.5, fontSize: 16 }}
 						variant="body2"
 						color="text.primary"
 					>
 						{props.projectInfo}
 					</Typography>
 					<Typography
-						sx={{ mb: 1.5 }}
+						sx={{ mb: 1.5, fontSize: 16 }}
 						variant="body2"
 						color="text.primary"
 					>

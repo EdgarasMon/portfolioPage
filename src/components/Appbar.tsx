@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useRef, useState, useEffect, Ref } from 'react';
-import ReactDOM from 'react-dom';
-import { render } from 'react-dom';
+// import { useRef, useState, useEffect, Ref } from 'react';
+// import ReactDOM from 'react-dom';
+// import { render } from 'react-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,26 +14,46 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import Contact from './Contact';
 import '../sass/AppBar.sass';
-import useSound from 'use-sound';
-//import click from '../sounds/click.mp3';
+import clsx from 'clsx';
+import { alpha, styled } from '@mui/material/styles';
+import { pink } from '@mui/material/colors';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
+import SvgIcon from '@mui/material/SvgIcon';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import NightlightIcon from '@mui/icons-material/Nightlight';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
+const clickSound = new Audio(require('../sounds/click.mp3'));
+const switchSound = new Audio(require('../sounds/switch.mp3'));
 
 const pages = ['🏠', '💼', '🖥️  🔧', '🤷', '📲 📧'];
 const pageNames = ['home', 'portfolio', 'skills & tools', 'about', 'contact'];
 const settings = ['Profile', 'Account', 'Dashboard'];
 const ResponsiveAppBar = () => {
-	const audioTune = new Audio('../sounds/click.mp3');
-
-	const usePlaySound = () => {
-		useEffect(() => {
-			audioTune.load();
-		}, []);
-		audioTune.play();
+	const handleSwitch = () => {
+		switchSound.volume = 0.4;
+		switchSound.play();
 	};
+	const GreenSwitch = styled(Switch)(({ theme }) => ({
+		'& .MuiSwitch-switchBase.Mui-checked': {
+			color: pink[600],
+			'&:hover': {
+				backgroundColor: alpha(
+					pink[600],
+					theme.palette.action.hoverOpacity
+				),
+			},
+		},
+		'& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+			backgroundColor: pink[600],
+		},
+	}));
+	const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 	const executeScroll = () => {
-		console.log('working');
+		clickSound.volume = 0.4;
+		clickSound.play();
 	};
 
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -83,7 +103,7 @@ const ResponsiveAppBar = () => {
 							aria-controls="menu-appbar"
 							aria-haspopup="true"
 							onClick={handleOpenNavMenu}
-							onMouseDown={usePlaySound}
+							onMouseDown={executeScroll}
 							color="inherit"
 						>
 							<MenuIcon />
@@ -150,19 +170,22 @@ const ResponsiveAppBar = () => {
 						))}
 					</Box>
 					<Box sx={{ flexGrow: 2 }}>
-						<Tooltip title="Open Bio">
-							<IconButton
-								onClick={handleOpenUserMenu}
-								sx={{ p: 0 }}
-							>
-								<Avatar
-									className="avatar"
-									alt="Edgaras Monkus"
-									src="/github.png"
-									sx={{ width: 50, height: 50 }}
-								/>
-							</IconButton>
-						</Tooltip>
+						<div>
+							<Switch
+								{...label}
+								color="default"
+								onClick={handleSwitch}
+							/>
+							<NightlightIcon sx={{ fontSize: 20, m: -0.8 }} />
+							<Switch
+								sx={{ fontSize: 20, ml: 3 }}
+								{...label}
+								color="default"
+								onClick={handleSwitch}
+							/>
+							<VolumeOffIcon sx={{ fontSize: 20, m: -0.8 }} />
+						</div>
+
 						<Menu
 							sx={{ mt: '60px' }}
 							id="menu-appbar"

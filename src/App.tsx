@@ -149,7 +149,7 @@ function App() {
 			</div>
 
 			<Box sx={{ bgcolor: '#adafff' }}>
-				<Tooltip title="My portfolio">
+				<Tooltip title="My projects">
 					<h1> 💼 </h1>
 				</Tooltip>
 			</Box>
@@ -159,7 +159,7 @@ function App() {
 					projectName="Calculator"
 					projectInfo="  This one-pager was created, by learning purposes. Functionalities: 
 				calculation of mulltiple numbers with memory board output, integrated music player, responsive and transitioning
-				 screen desing."
+				 screen design."
 					technologiesUsed="HTML, CSS, JavaScript"
 					gitHubRepository="https://github.com/EdgarasMon/calculator"
 					siteUrl="https://edgarasmon.github.io/calculator/"
@@ -188,7 +188,7 @@ function App() {
 				<div className="projects"></div>
 			</Box>
 			<Box sx={{ bgcolor: '#b9bbff' }}>
-				<Tooltip title="skills / tools">
+				<Tooltip title="technical skills / tools">
 					<h1>🖥️ 🔧</h1>
 				</Tooltip>
 				<div className="skilsAndTools">
@@ -205,12 +205,14 @@ function App() {
 			<div className="aboutContainer">
 				<div className="about">
 					{' '}
-					Experienced Telecommunications Engineer with a demonstrated
-					history of working in the telecommunications industry.
-					Skilled in Network Installation, English, Wireless Routers,
-					Fiber to the Home (FTTH), and Software Installation. Strong
-					engineering professional with a Bachelor's degree focused in
-					Information Technology from ŠU.
+					I'm an ambitious, web focused developer and experienced
+					telecommunications engineer with a demonstrated history of
+					working in this industry. Skilled in network installation,
+					FTTH-GPON ect. Bachelor's degree in IT from ŠU University.
+					My motivation is passion for learning new technologies and
+					adapt them in projects I create. I love to design, make
+					front-end and back-end. I'm seeking an entry-level role as a
+					full-stack developer.
 				</div>
 			</div>
 
