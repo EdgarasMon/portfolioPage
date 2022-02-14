@@ -1,7 +1,11 @@
+import * as Scroll from 'react-scroll';
+import { Link, animateScroll as scroll } from 'react-scroll';
+
 import * as React from 'react';
 // import { useRef, useState, useEffect, Ref } from 'react';
 // import ReactDOM from 'react-dom';
 // import { render } from 'react-dom';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,31 +14,19 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import '../sass/AppBar.sass';
-import clsx from 'clsx';
 import { alpha, styled } from '@mui/material/styles';
 import { pink } from '@mui/material/colors';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import SvgIcon from '@mui/material/SvgIcon';
-import LightModeIcon from '@mui/icons-material/LightMode';
 import NightlightIcon from '@mui/icons-material/Nightlight';
-import VolumeOffIcon from '@mui/icons-material/VolumeOff';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 const clickSound = new Audio(require('../sounds/click.mp3'));
 const switchSound = new Audio(require('../sounds/switch.mp3'));
 
-const pages = ['🏠', '💼', '🖥️  🔧', '🤷', '📲 📧'];
-const pageNames = ['home', 'portfolio', 'skills & tools', 'about', 'contact'];
-const settings = ['Profile', 'Account', 'Dashboard'];
 const ResponsiveAppBar = () => {
-	const handleSwitch = () => {
-		switchSound.volume = 0.4;
-		switchSound.play();
-	};
 	const GreenSwitch = styled(Switch)(({ theme }) => ({
 		'& .MuiSwitch-switchBase.Mui-checked': {
 			color: pink[600],
@@ -51,28 +43,49 @@ const ResponsiveAppBar = () => {
 	}));
 	const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
-	const executeScroll = () => {
-		clickSound.volume = 0.4;
-		clickSound.play();
+	let [soundOn, setSoundOn] = React.useState(false);
+
+	const handleSwitchSound = () => {
+		if (soundOn) {
+			switchSound.play();
+			console.log('sound playing');
+		}
 	};
+
+	const handleClickSound = () => {
+		console.log('inside handleClickSound');
+		if (soundOn) {
+			switchSound.play();
+			console.log('sound playing');
+		}
+	};
+
+	const handleToggleSoundSwitch = () => {
+		if (soundOn) {
+			console.log('soundOn ', soundOn);
+			setSoundOn(false);
+		} else {
+			console.log('soundOn ', soundOn);
+			setSoundOn(true);
+		}
+	};
+
+	React.useEffect(() => {
+		if (soundOn) {
+			clickSound.play();
+		}
+	}, [soundOn]);
 
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
 		null
 	);
-	const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-		null
-	);
+
 	const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
 		setAnchorElNav(event.currentTarget);
 	};
-	const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-		setAnchorElUser(event.currentTarget);
-	};
+
 	const handleCloseNavMenu = () => {
 		setAnchorElNav(null);
-	};
-	const handleCloseUserMenu = () => {
-		setAnchorElUser(null);
 	};
 
 	return (
@@ -103,7 +116,6 @@ const ResponsiveAppBar = () => {
 							aria-controls="menu-appbar"
 							aria-haspopup="true"
 							onClick={handleOpenNavMenu}
-							onMouseDown={executeScroll}
 							color="inherit"
 						>
 							<MenuIcon />
@@ -126,13 +138,96 @@ const ResponsiveAppBar = () => {
 								display: { xs: 'block', md: 'none' },
 							}}
 						>
-							{pages.map(page => (
-								<MenuItem key={page} onClick={executeScroll}>
-									<Typography textAlign="center">
-										{page}
-									</Typography>
-								</MenuItem>
-							))}
+							<MenuItem
+								className="menuLinks"
+								onClick={handleClickSound}
+								sx={{
+									fontSize: 20,
+								}}
+							>
+								<Link
+									activeClass="active"
+									to="homepage"
+									spy={true}
+									smooth={true}
+									offset={-64}
+									duration={2000}
+								>
+									home
+								</Link>
+							</MenuItem>
+							<MenuItem
+								className="menuLinks"
+								onClick={handleClickSound}
+								sx={{
+									fontSize: 20,
+								}}
+							>
+								<Link
+									activeClass="active"
+									to="projects"
+									spy={true}
+									smooth={true}
+									offset={-160}
+									duration={2000}
+								>
+									portfolio
+								</Link>
+							</MenuItem>{' '}
+							<MenuItem
+								className="menuLinks"
+								onClick={handleClickSound}
+								sx={{
+									fontSize: 20,
+								}}
+							>
+								<Link
+									activeClass="active"
+									to="skilsAndTools"
+									spy={true}
+									smooth={true}
+									offset={-160}
+									duration={2000}
+								>
+									skills & tools
+								</Link>
+							</MenuItem>{' '}
+							<MenuItem
+								className="menuLinks"
+								onClick={handleClickSound}
+								sx={{
+									fontSize: 20,
+								}}
+							>
+								<Link
+									activeClass="active"
+									to="about"
+									spy={true}
+									smooth={true}
+									offset={-160}
+									duration={2000}
+								>
+									about
+								</Link>
+							</MenuItem>{' '}
+							<MenuItem
+								className="menuLinks"
+								onClick={handleClickSound}
+								sx={{
+									fontSize: 20,
+								}}
+							>
+								<Link
+									activeClass="active"
+									to="contact"
+									spy={true}
+									smooth={true}
+									offset={-64}
+									duration={2000}
+								>
+									contact
+								</Link>
+							</MenuItem>
 						</Menu>
 					</Box>
 					<Typography
@@ -152,67 +247,118 @@ const ResponsiveAppBar = () => {
 							display: { xs: 'none', md: 'flex' },
 						}}
 					>
-						{pages.map(page => (
-							<Button
-								className="menuLinks"
-								key={page}
-								onClick={executeScroll}
-								sx={{
-									my: 2,
-									color: 'white',
-									fontSize: 20,
-									display: 'block',
-									borderRadius: 0,
-								}}
-							>
-								{page}
-							</Button>
-						))}
-					</Box>
-					<Box sx={{ flexGrow: 2 }}>
-						<div>
-							<Switch
-								{...label}
-								color="default"
-								onClick={handleSwitch}
-							/>
-							<NightlightIcon sx={{ fontSize: 20, m: -0.8 }} />
-							<Switch
-								sx={{ fontSize: 20, ml: 3 }}
-								{...label}
-								color="default"
-								onClick={handleSwitch}
-							/>
-							<VolumeOffIcon sx={{ fontSize: 20, m: -0.8 }} />
-						</div>
-
-						<Menu
-							sx={{ mt: '60px' }}
-							id="menu-appbar"
-							anchorEl={anchorElUser}
-							anchorOrigin={{
-								vertical: 'top',
-								horizontal: 'right',
+						<Button
+							className="menuLinks"
+							onClick={handleClickSound}
+							sx={{
+								fontSize: 20,
 							}}
-							keepMounted
-							transformOrigin={{
-								vertical: 'top',
-								horizontal: 'right',
-							}}
-							open={Boolean(anchorElUser)}
-							onClose={handleCloseUserMenu}
 						>
-							{settings.map(setting => (
-								<MenuItem
-									key={setting}
-									onClick={handleCloseUserMenu}
-								>
-									<Typography textAlign="center">
-										{setting}
-									</Typography>
-								</MenuItem>
-							))}
-						</Menu>
+							<Link
+								activeClass="active"
+								to="homepage"
+								spy={true}
+								smooth={true}
+								offset={-64}
+								duration={2000}
+							>
+								🏠
+							</Link>
+						</Button>
+						<Button
+							className="menuLinks"
+							onClick={handleClickSound}
+							sx={{
+								fontSize: 20,
+							}}
+						>
+							<Link
+								activeClass="active"
+								to="projects"
+								spy={true}
+								smooth={true}
+								offset={-160}
+								duration={2000}
+							>
+								💼
+							</Link>
+						</Button>
+						<Button
+							className="menuLinks"
+							onClick={handleClickSound}
+							sx={{
+								fontSize: 20,
+							}}
+						>
+							<Link
+								activeClass="active"
+								to="skilsAndTools"
+								spy={true}
+								smooth={true}
+								offset={-160}
+								duration={2000}
+							>
+								🖥️ 🔧
+							</Link>
+						</Button>
+						<Button
+							className="menuLinks"
+							onClick={handleClickSound}
+							sx={{
+								fontSize: 20,
+							}}
+						>
+							<Link
+								activeClass="active"
+								to="about"
+								spy={true}
+								smooth={true}
+								offset={-160}
+								duration={2000}
+							>
+								🤷
+							</Link>
+						</Button>
+						<Button
+							className="menuLinks"
+							onClick={handleClickSound}
+							sx={{
+								fontSize: 20,
+							}}
+						>
+							<Link
+								activeClass="active"
+								to="contact"
+								spy={true}
+								smooth={true}
+								offset={-64}
+								duration={2000}
+							>
+								📲 📧
+							</Link>
+						</Button>
+					</Box>
+
+					<Box sx={{ flexGrow: 2 }}>
+						<Switch
+							{...label}
+							color="default"
+							type="checkbox"
+							onClick={handleSwitchSound}
+						/>
+
+						<NightlightIcon sx={{ fontSize: 20, m: -0.8 }} />
+
+						<Switch
+							id="muteSound"
+							sx={{ fontSize: 20, ml: 3 }}
+							{...label}
+							color="default"
+							onChange={handleToggleSoundSwitch}
+							checked={soundOn}
+						/>
+
+						<VolumeUpIcon sx={{ fontSize: 20, m: -0.8 }} />
 					</Box>
 				</Toolbar>
 			</Container>
