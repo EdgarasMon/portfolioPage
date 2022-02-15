@@ -13,7 +13,7 @@ import { init } from '@emailjs/browser';
 init('user_iLKSGUev9BJGVQHQvEIsw');
 const SITE_KEY = '6LdUBWYeAAAAAFujSrcEyZWcs-yRCw8pLGgtRBaK';
 const messageSound = new Audio(require('../sounds/message.mp3'));
-
+const warningSound = new Audio(require('../sounds/warning.wav'));
 export default function ColorTextFields() {
 	let window: any;
 	const [name, setName] = useState('');
@@ -24,6 +24,12 @@ export default function ColorTextFields() {
 	const [emailSent, setEmailSent] = useState(false);
 	const [emailSendError, setEmailSendError] = useState(false);
 
+	// React.useEffect(() => {
+	// 	if (name) {
+	// 		setName('');
+	// 	}
+	// }, [name]);
+
 	function onFormSubmit(e: any) {
 		const emailDetails = {
 			Name: name,
@@ -31,16 +37,31 @@ export default function ColorTextFields() {
 			message: message,
 			Email: email,
 		};
-		console.log(emailDetails);
-		sendFeedback(emailDetails);
-		e.preventDefault();
-		window.grecaptcha.ready(function () {
-			window.grecaptcha
-				.execute(SITE_KEY, { action: 'submit' })
-				.then(function (token: any) {
-					// Send form value as well as token to the server
-				});
-		});
+		//console.log('before check :', emailDetails);
+
+		if (
+			emailDetails.Name !== '' &&
+			emailDetails.Subject !== '' &&
+			emailDetails.message !== '' &&
+			emailDetails.Email !== ''
+		) {
+			console.log(emailDetails.Name);
+			console.log(emailDetails.Name);
+			sendFeedback(emailDetails);
+			e.preventDefault();
+			window.grecaptcha.ready(function () {
+				window.grecaptcha
+					.execute(SITE_KEY, { action: 'submit' })
+					.then(function (token: any) {
+						// Send form value as well as token to the server
+					});
+			});
+		} else {
+			setEmailSendError(true);
+			console.log('Please fill all fiels Corectly');
+			warningSound.volume = 0.4;
+			warningSound.play();
+		}
 	}
 
 	const sendFeedback = (emailDetails: any) => {
@@ -51,6 +72,12 @@ export default function ColorTextFields() {
 				setEmailSent(true);
 				messageSound.volume = 0.4;
 				messageSound.play();
+				emailDetails = {
+					Name: setName(''),
+					Subject: setSubject(''),
+					message: setMessage(''),
+					Email: setEmail(''),
+				};
 			})
 			.catch((err: any) => {
 				console.error(
@@ -120,7 +147,7 @@ export default function ColorTextFields() {
 				>
 					Send
 				</Button>
-				<Box>
+				<Box sx={{ mt: 2 }}>
 					{emailSent && (
 						<Alert
 							severity="success"
@@ -132,7 +159,7 @@ export default function ColorTextFields() {
 						</Alert>
 					)}
 				</Box>
-				<Box>
+				<Box sx={{ mt: 2 }}>
 					{emailSendError && (
 						<Alert
 							severity="error"
@@ -141,6 +168,18 @@ export default function ColorTextFields() {
 							}}
 						>
 							Email didn't sent!
+						</Alert>
+					)}
+				</Box>
+				<Box sx={{ mt: 2 }}>
+					{emailSendError && (
+						<Alert
+							severity="warning"
+							onClose={() => {
+								setEmailSendError(false);
+							}}
+						>
+							Please fill all fiels Corectly!
 						</Alert>
 					)}
 				</Box>
