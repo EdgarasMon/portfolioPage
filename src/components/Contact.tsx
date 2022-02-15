@@ -58,7 +58,6 @@ export default function ColorTextFields() {
 			});
 		} else {
 			setEmailSendError(true);
-			console.log('Please fill all fiels Corectly');
 			warningSound.volume = 0.4;
 			warningSound.play();
 		}
@@ -72,12 +71,6 @@ export default function ColorTextFields() {
 				setEmailSent(true);
 				messageSound.volume = 0.4;
 				messageSound.play();
-				emailDetails = {
-					Name: setName(''),
-					Subject: setSubject(''),
-					message: setMessage(''),
-					Email: setEmail(''),
-				};
 			})
 			.catch((err: any) => {
 				console.error(
@@ -94,6 +87,7 @@ export default function ColorTextFields() {
 				<TextField
 					type="text"
 					name="name"
+					placeholder="Mr. / Ms. Name"
 					onChange={e => setName(e.target.value)}
 					label="Name"
 					required
@@ -102,6 +96,7 @@ export default function ColorTextFields() {
 				<TextField
 					type="text"
 					name="Subject"
+					placeholder="About your Experience / Projects"
 					onChange={e => setSubject(e.target.value)}
 					label="Subject"
 					required
@@ -111,6 +106,7 @@ export default function ColorTextFields() {
 					type="text"
 					name="message"
 					onChange={e => setMessage(e.target.value)}
+					placeholder="Hi, I would like to ask"
 					label="Message"
 					required
 					multiline
@@ -125,6 +121,7 @@ export default function ColorTextFields() {
 				<br />
 				<TextField
 					type="email"
+					placeholder="myEmail@gmail.com"
 					label="E-mail"
 					required
 					onChange={e => setEmail(e.target.value)}

@@ -32,7 +32,7 @@ function App() {
 					<img
 						alt="Guypicture"
 						className="guyPicture"
-						src="guy.png"
+						src="guy.webp"
 					/>
 				</div>
 				<div>
@@ -72,7 +72,7 @@ function App() {
 			</div>
 			<Box className="projects">
 				<Card
-					projectScreenShot="/projects/calculator/index.jpg"
+					projectScreenShot="/projects/calculator/index.webp"
 					projectName="Calculator"
 					projectInfo="  This one-pager was created, by learning purposes. Functionalities: 
 				calculation of mulltiple numbers with memory board output, integrated music player, responsive and transitioning
@@ -83,7 +83,7 @@ function App() {
 				/>
 
 				<Card
-					projectScreenShot="/projects/shoppingList/dashboard.jpg"
+					projectScreenShot="/projects/shoppingList/dashboard.webp"
 					projectName="Shopping-List"
 					projectInfo="Site is created for taking notes of grocery products. Site is for 
 				registered users, but non-registerd users can try it too. Functionalities: Add products from text inputs or search
@@ -93,7 +93,7 @@ function App() {
 				/>
 
 				<Card
-					projectScreenShot="/projects/portfolioPage/portfolio.jpg"
+					projectScreenShot="/projects/portfolioPage/portfolio.webp"
 					projectName="Portfolio-Page"
 					projectInfo="Site is created for projects showing purposes. Functionalities: 
 					interactive React and Material UI components and design, Contact form for sending email."

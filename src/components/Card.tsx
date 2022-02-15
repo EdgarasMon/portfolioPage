@@ -31,19 +31,19 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 export default function ActionAreaCard(props: any) {
 	let calculatorScreenshots = [
-		'/projects/calculator/2.jpg',
-		'/projects/calculator/3.jpg',
+		'/projects/calculator/2.webp',
+		'/projects/calculator/3.webp',
 	];
 
 	let shoppingListScreenShots = [
-		'/projects/shoppingList/signup.jpg',
-		'/projects/shoppingList/login.jpg',
-		'/projects/shoppingList/dashboard.jpg',
-		'/projects/shoppingList/searchresults.jpg',
-		'/projects/shoppingList/my-lists.jpg',
+		'/projects/shoppingList/signup.webp',
+		'/projects/shoppingList/login.webp',
+		'/projects/shoppingList/dashboard.webp',
+		'/projects/shoppingList/searchresults.webp',
+		'/projects/shoppingList/my-lists.webp',
 	];
 
-	let portfolioPageScreenShots = ['/projects/portfolioPage/portfolio.jpg'];
+	let portfolioPageScreenShots = ['/projects/portfolioPage/portfolio.webp'];
 
 	const [expanded, setExpanded] = React.useState(false);
 

@@ -6,67 +6,98 @@ export default function SimplePaper(props: any) {
 		<React.Fragment>
 			<div className="technologyLogos">
 				<figure>
-					<img src="/technologies/html.png" width="90" height="90" />
+					<img
+						src="/technologies/html.webp"
+						width="90"
+						height="90"
+						alt="technologyLogo"
+					/>
 				</figure>
 				<figure>
-					<img src="/technologies/css.png" width="90" height="90" />
+					<img
+						src="/technologies/css.webp"
+						width="90"
+						height="90"
+						alt="technologyLogo"
+					/>
 				</figure>
 				<figure>
 					<Tooltip title="CSS with superpowers">
 						<img
-							src="/technologies/sass.png"
+							src="/technologies/sass.webp"
 							width="90"
 							height="90"
+							alt="technologyLogo"
 						/>
 					</Tooltip>
 				</figure>
 				<figure>
-					<img src="/technologies/javas.png" width="90" height="90" />
-				</figure>
-				<figure>
 					<img
-						src="/technologies/typescript.png"
+						src="/technologies/javas.webp"
 						width="90"
 						height="90"
+						alt="technologyLogo"
 					/>
 				</figure>
 				<figure>
-					<img src="/technologies/react.png" width="90" height="90" />
+					<img
+						src="/technologies/typescript.webp"
+						width="90"
+						height="90"
+						alt="technologyLogo"
+					/>
 				</figure>
 				<figure>
 					<img
-						src="/technologies/python.png"
+						src="/technologies/react.webp"
 						width="90"
 						height="90"
+						alt="technologyLogo"
+					/>
+				</figure>
+				<figure>
+					<img
+						src="/technologies/python.webp"
+						width="90"
+						height="90"
+						alt="technologyLogo"
 					/>
 				</figure>
 				<figure>
 					<Tooltip title="'MongoDB' is a schema-less NoSQL document database">
 						<img
-							src="/technologies/mongodb.png"
+							src="/technologies/mongodb.webp"
 							width="90"
 							height="90"
+							alt="technologyLogo"
 						/>
 					</Tooltip>
 				</figure>
 				<figure>
 					<Tooltip title="'nodejs' back-end JavaScript runtime environment ">
 						<img
-							src="/technologies/node.png"
+							src="/technologies/node.webp"
 							width="90"
 							height="90"
+							alt="technologyLogo"
 						/>
 					</Tooltip>
 				</figure>
 				<figure>
-					<img src="/technologies/mysql.png" width="90" height="90" />
+					<img
+						src="/technologies/mysql.webp"
+						width="90"
+						height="90"
+						alt="technologyLogo"
+					/>
 				</figure>
 				<figure>
 					<Tooltip title="responsive Web design">
 						<img
-							src="/technologies/responsive.png"
+							src="/technologies/responsive.webp"
 							width="90"
 							height="90"
+							alt="technologyLogo"
 						/>
 					</Tooltip>
 				</figure>
@@ -74,25 +105,41 @@ export default function SimplePaper(props: any) {
 
 			<div className="toolsLogos">
 				<figure>
-					<img src="/tools/vscode.png" width="90" height="90" />
+					<img
+						src="/tools/vscode.webp"
+						width="90"
+						height="90"
+						alt="toolsLogo"
+					/>
 				</figure>
 				<Tooltip title="'localstorage' browser storage ">
 					<figure>
 						<img
-							src="/tools/localstorage.png"
+							src="/tools/localstorage.webp"
 							width="90"
 							height="90"
+							alt="toolsLogo"
 						/>
 					</figure>
 				</Tooltip>
 				<Tooltip title="'emailjs' tool for sending emails from just frontend ">
 					<figure>
-						<img src="/tools/emailjs.png" width="90" height="90" />
+						<img
+							src="/tools/emailjs.webp"
+							width="90"
+							height="90"
+							alt="toolsLogo"
+						/>
 					</figure>
 				</Tooltip>
 				<Tooltip title="'reCAPTCHA-v3' Google service from fraud and abuse ">
 					<figure>
-						<img src="/tools/hcapha.png" width="90" height="90" />
+						<img
+							src="/tools/hcapha.webp"
+							width="90"
+							height="90"
+							alt="toolsLogo"
+						/>
 					</figure>
 				</Tooltip>
 			</div>

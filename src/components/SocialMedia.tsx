@@ -12,7 +12,7 @@ export default function SimplePaper() {
 						target="_blank"
 					>
 						<img
-							src="/social/linkedin.png"
+							src="/social/linkedin.webp"
 							width="70"
 							height="70"
 						/>
@@ -20,7 +20,7 @@ export default function SimplePaper() {
 				</figure>
 				<figure>
 					<a href="https://github.com/EdgarasMon/" target="_blank">
-						<img src="/social/git.png" width="70" height="70" />
+						<img src="/social/git.webp" width="70" height="70" />
 					</a>
 				</figure>
 				<figure>
@@ -28,7 +28,7 @@ export default function SimplePaper() {
 						href="https://www.facebook.com/edgaras.edga.739/"
 						target="_blank"
 					>
-						<img src="/social/fb.png" width="70" height="70" />
+						<img src="/social/fb.webp" width="70" height="70" />
 					</a>
 				</figure>
 			</div>

@@ -64,6 +64,7 @@ const ResponsiveAppBar = () => {
 
 	const handleSwitchSound = () => {
 		if (soundOn) {
+			switchSound.volume = 0.4;
 			switchSound.play();
 			console.log('sound playing');
 		}
@@ -72,6 +73,7 @@ const ResponsiveAppBar = () => {
 	const handleClickSound = () => {
 		console.log('inside handleClickSound');
 		if (soundOn) {
+			clickSound.volume = 0.4;
 			clickSound.play();
 			console.log('sound playing');
 		}
