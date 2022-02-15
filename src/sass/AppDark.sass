@@ -1,11 +1,8 @@
 @import 'https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Crimson+Pro:wght@300&family=Monoton&family=Neonderthaw&family=Raleway+Dots&family=Sora&display=swap'
 
-$wawesColor: #8185f3
-$homepageColor: #a1a3f2
-$projectsColor: #adafff
-$skillsAndToolsColor: #b9bbff
+$darkBlueColor: #000246    
 $aboutColor: #c5c7ff
-$contactColor: #d2d3ff
+$wawesColor: #8185f3
 
 $whiteColor: #fff
 $blackColor: #000000
@@ -17,7 +14,7 @@ $displayGrid: grid
 html, body 
     min-height: 100%
     min-width: 100%
-    background-color: $wawesColor
+    background-color: $darkBlueColor
     overflow-x: hidden
 
 .container	
@@ -25,22 +22,22 @@ html, body
     flex-direction: column
     //background-repeat: inherit
     background-size: cover
-    background: $wawesColor
+    background: $darkBlueColor
 
 body::-webkit-scrollbar 
   width: 10px
 
 body
   scrollbar-width: thin
-  scrollbar-color: $contactColor
+  scrollbar-color: $wawesColor
 
 body::-webkit-scrollbar-track 
-  background: $contactColor
+  background: $darkBlueColor
 
 body::-webkit-scrollbar-thumb 
   background-color: $wawesColor
   border-radius: 3px
-  border: 2px solid $wawesColor    
+  border: 2px solid $wawesColor 
 
 h1, h2 
     text-align: center	
@@ -62,10 +59,10 @@ h1, h2
 
 .topDecoration
     shape-fill 
-    fill: $wawesColor
+    fill: $darkBlueColor
 
 .homepage
-    background-color: $homepageColor
+    background-color: $darkBlueColor
     position: relative
     z-index: 1
     display: flex
@@ -104,7 +101,7 @@ h1, h2
     height: auto
 
 .portfolioTittle
-    background: $projectsColor
+    background: $darkBlueColor    
 
 .projects 
     display: flex
@@ -113,7 +110,7 @@ h1, h2
     flex-wrap: wrap
     justify-items: center
     background: inherit
-    background-color: $projectsColor
+    background-color: $darkBlueColor
     color: $whiteColor
     position: relative
     z-index: 1
@@ -133,12 +130,12 @@ h1, h2
     z-index: -1
 
 .skillsTittle
-     background: $skillsAndToolsColor 
+     background: $darkBlueColor
 
 .skilsAndTools
     display: flex
     background: inherit
-    background-color: $skillsAndToolsColor
+    background-color: $darkBlueColor
     z-index: 1	
     height: auto
     justify-content: center
@@ -150,17 +147,17 @@ h1, h2
     margin-bottom: 50px    
 
 .aboutContainer
-    background: $aboutColor
+    background: $darkBlueColor
     display: flex
     justify-content: center
 
 .aboutTittle
-    background: $aboutColor       
+    background: $darkBlueColor  
 
 .about
     width: 700px
     font-size: 20px
-    background-color: $contactColor
+    background-color: $aboutColor
     white-space: pre-wrap
     margin-bottom: 50px
     margin-top: 20px
@@ -170,7 +167,7 @@ h1, h2
 
 .contact
     display: flex
-    background-color: $contactColor
+    background-color: $darkBlueColor
     position: relative
     flex-direction: row
     flex-wrap: wrap
@@ -199,6 +196,7 @@ h1, h2
         font-weight: bold
 
 .contactForm
+    background: $aboutColor
     display: flex
     flex-direction: column
     flex-wrap: nowrap
@@ -210,8 +208,8 @@ h1, h2
     justify-content: center
     justify-items: center
     background: inherit
-    background-color: $contactColor
-    color: $blackColor
+    background-color: $darkBlueColor
+    color: $whiteColor
     position: relative
     z-index: 1	
     padding-top: 5px
@@ -234,11 +232,12 @@ h1, h2
     transform: rotateY(180deg)
 
 .bottomDecoration .shape-fill 
-    fill: $wawesColor
+    fill:  $darkBlueColor
 
 .footerText    
     text-align: center
-    background-color: $wawesColor
+    background-color: $darkBlueColor
+    color: $aboutColor
     height: 70px
     display: flex
     justify-content: center

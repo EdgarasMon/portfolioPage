@@ -43,6 +43,17 @@ const ResponsiveAppBar = () => {
 	}));
 	const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
+	// let [darkTheme, setdarkTheme] = React.useState(false);
+
+	// React.useEffect(() => {
+	// 	if (darkTheme) {
+	// 	}
+	// }, [darkTheme]);
+
+	// const handleDarkThemeSwitch = () => {};
+
+	// const handleDarkTheme = () => {};
+
 	let [soundOn, setSoundOn] = React.useState(false);
 
 	React.useEffect(() => {
@@ -247,96 +258,106 @@ const ResponsiveAppBar = () => {
 							display: { xs: 'none', md: 'flex' },
 						}}
 					>
-						<Button
-							className="menuLinks"
-							sx={{
-								fontSize: 20,
-							}}
-						>
-							<Link
-								onClick={handleClickSound}
-								activeClass="active"
-								to="homepage"
-								spy={true}
-								smooth={true}
-								offset={-64}
-								duration={2000}
+						<Tooltip title="home">
+							<Button
+								className="menuLinks"
+								sx={{
+									fontSize: 20,
+								}}
 							>
-								🏠
-							</Link>
-						</Button>
-						<Button
-							className="menuLinks"
-							sx={{
-								fontSize: 20,
-							}}
-						>
-							<Link
-								onClick={handleClickSound}
-								activeClass="active"
-								to="projects"
-								spy={true}
-								smooth={true}
-								offset={-160}
-								duration={2000}
+								<Link
+									onClick={handleClickSound}
+									activeClass="active"
+									to="homepage"
+									spy={true}
+									smooth={true}
+									offset={-64}
+									duration={2000}
+								>
+									🏠
+								</Link>
+							</Button>
+						</Tooltip>
+						<Tooltip title="my projects">
+							<Button
+								className="menuLinks"
+								sx={{
+									fontSize: 20,
+								}}
 							>
-								💼
-							</Link>
-						</Button>
-						<Button
-							className="menuLinks"
-							sx={{
-								fontSize: 20,
-							}}
-						>
-							<Link
-								onClick={handleClickSound}
-								activeClass="active"
-								to="skilsAndTools"
-								spy={true}
-								smooth={true}
-								offset={-160}
-								duration={2000}
+								<Link
+									onClick={handleClickSound}
+									activeClass="active"
+									to="projects"
+									spy={true}
+									smooth={true}
+									offset={-160}
+									duration={2000}
+								>
+									💼
+								</Link>
+							</Button>
+						</Tooltip>
+						<Tooltip title="skills & tools">
+							<Button
+								className="menuLinks"
+								sx={{
+									fontSize: 20,
+								}}
 							>
-								🖥️ 🔧
-							</Link>
-						</Button>
-						<Button
-							className="menuLinks"
-							sx={{
-								fontSize: 20,
-							}}
-						>
-							<Link
-								onClick={handleClickSound}
-								activeClass="active"
-								to="about"
-								spy={true}
-								smooth={true}
-								offset={-160}
-								duration={2000}
+								<Link
+									onClick={handleClickSound}
+									activeClass="active"
+									to="skilsAndTools"
+									spy={true}
+									smooth={true}
+									offset={-160}
+									duration={2000}
+								>
+									🖥️ 🔧
+								</Link>
+							</Button>
+						</Tooltip>
+						<Tooltip title="about">
+							<Button
+								className="menuLinks"
+								sx={{
+									fontSize: 20,
+								}}
 							>
-								🤷
-							</Link>
-						</Button>
-						<Button
-							className="menuLinks"
-							sx={{
-								fontSize: 20,
-							}}
-						>
-							<Link
-								onClick={handleClickSound}
-								activeClass="active"
-								to="contact"
-								spy={true}
-								smooth={true}
-								offset={-64}
-								duration={2000}
+								<Link
+									onClick={handleClickSound}
+									activeClass="active"
+									to="about"
+									spy={true}
+									smooth={true}
+									offset={-160}
+									duration={2000}
+								>
+									🤷
+								</Link>
+							</Button>
+						</Tooltip>
+						<Tooltip title="contact">
+							<Button
+								className="menuLinks"
+								sx={{
+									fontSize: 20,
+								}}
 							>
-								📲 📧
-							</Link>
-						</Button>
+								<Link
+									onClick={handleClickSound}
+									activeClass="active"
+									to="contact"
+									spy={true}
+									smooth={true}
+									offset={-64}
+									duration={2000}
+								>
+									📲 📧
+								</Link>
+							</Button>
+						</Tooltip>
 					</Box>
 
 					<Box sx={{ flexGrow: 2 }}>
@@ -345,6 +366,8 @@ const ResponsiveAppBar = () => {
 							color="default"
 							type="checkbox"
 							onClick={handleSwitchSound}
+							// onChange={handleDarkThemeSwitch}
+							// checked={darkTheme}
 						/>
 
 						<NightlightIcon sx={{ fontSize: 20, m: -0.8 }} />

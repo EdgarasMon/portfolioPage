@@ -97,6 +97,7 @@ export default function ColorTextFields() {
 				/>
 				<br />
 				<TextField
+					type="email"
 					label="E-mail"
 					required
 					onChange={e => setEmail(e.target.value)}

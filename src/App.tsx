@@ -1,10 +1,4 @@
-import React, {
-	useRef,
-	forwardRef,
-	useState,
-	useEffect,
-	useCallback,
-} from 'react';
+import React, { useState, useEffect } from 'react';
 import AppBar from './components/AppBar';
 import Card from './components/Card';
 import Paper from './components/PaperTabs';
@@ -12,12 +6,19 @@ import Contact from './components/Contact';
 import TimeLine from './components/TimeLine';
 import SocialMedia from './components/SocialMedia';
 import './sass/App.sass';
+//import './sass/AppDark.sass';
 import './sass/Card.sass';
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
 import ReactDOM from 'react-dom';
+import Button from '@mui/material/Button';
 
 function App() {
+	const changeTheme = () => {
+		var element = document.body;
+		element.classList.toggle('dark-mode');
+	};
+
 	return (
 		<div className="container">
 			<AppBar />
@@ -34,9 +35,9 @@ function App() {
 						src="guy.png"
 					/>
 				</div>
-
 				<div>
 					<TimeLine />
+					<Button onClick={changeTheme}>theme change</Button>
 				</div>
 
 				<div className="topDecoration">
@@ -64,11 +65,11 @@ function App() {
 				</div>
 			</div>
 
-			<Box sx={{ bgcolor: '#adafff' }}>
+			<div className="portfolioTittle">
 				<Tooltip title="My projects">
 					<h1> 💼 </h1>
 				</Tooltip>
-			</Box>
+			</div>
 			<Box className="projects">
 				<Card
 					projectScreenShot="/projects/calculator/index.jpg"
@@ -100,10 +101,8 @@ function App() {
 					gitHubRepository="https://github.com/EdgarasMon/portfolioPage"
 				/>
 			</Box>
-			<Box sx={{ bgcolor: '#cd9b9b' }}>
-				<div className="projects"></div>
-			</Box>
-			<Box sx={{ bgcolor: '#b9bbff' }}>
+
+			<div className="skillsTittle">
 				<Tooltip title="technical skills / tools">
 					<h1>🖥️ 🔧</h1>
 				</Tooltip>
@@ -111,24 +110,24 @@ function App() {
 					<Paper />
 					<div className="skilsAndToolsChild"></div>
 				</div>
-			</Box>
+			</div>
 
-			<Box sx={{ bgcolor: '#c5c7ff' }}>
+			<div className="aboutTittle">
 				<Tooltip title="about Me">
 					<h1>🤷</h1>
 				</Tooltip>
-			</Box>
+			</div>
 			<div className="aboutContainer">
 				<div className="about">
 					{' '}
-					I'm an ambitious, web focused developer and experienced
-					telecommunications engineer with a demonstrated history of
-					working in this industry. Skilled in network installation,
-					FTTH-GPON ect. Bachelor's degree in IT from ŠU University.
-					My motivation is passion for learning new technologies and
-					adapt them in projects I create. I love to design, make
-					front-end and back-end. I'm seeking an entry-level role as a
-					full-stack developer.
+					I'm an ambitious, persistant, Web Systems focused developer.
+					Also experienced telecommunications engineer with a
+					demonstrated history of working in this industry. Skilled in
+					network installation, FTTH-GPON ect. Bachelor's degree in IT
+					from ŠU University. My motivation is passion for learning
+					new technologies and adapting them in projects I create. I
+					love to design, make front-end and back-end. I'm seeking an
+					entry-level role as a full-stack or front-end developer.
 				</div>
 			</div>
 
