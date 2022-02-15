@@ -45,6 +45,12 @@ const ResponsiveAppBar = () => {
 
 	let [soundOn, setSoundOn] = React.useState(false);
 
+	React.useEffect(() => {
+		if (soundOn) {
+			switchSound.play();
+		}
+	}, [soundOn]);
+
 	const handleSwitchSound = () => {
 		if (soundOn) {
 			switchSound.play();
@@ -55,7 +61,7 @@ const ResponsiveAppBar = () => {
 	const handleClickSound = () => {
 		console.log('inside handleClickSound');
 		if (soundOn) {
-			switchSound.play();
+			clickSound.play();
 			console.log('sound playing');
 		}
 	};
@@ -69,12 +75,6 @@ const ResponsiveAppBar = () => {
 			setSoundOn(true);
 		}
 	};
-
-	React.useEffect(() => {
-		if (soundOn) {
-			clickSound.play();
-		}
-	}, [soundOn]);
 
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
 		null
@@ -140,12 +140,12 @@ const ResponsiveAppBar = () => {
 						>
 							<MenuItem
 								className="menuLinks"
-								onClick={handleClickSound}
 								sx={{
 									fontSize: 20,
 								}}
 							>
 								<Link
+									onClick={handleClickSound}
 									activeClass="active"
 									to="homepage"
 									spy={true}
@@ -158,12 +158,12 @@ const ResponsiveAppBar = () => {
 							</MenuItem>
 							<MenuItem
 								className="menuLinks"
-								onClick={handleClickSound}
 								sx={{
 									fontSize: 20,
 								}}
 							>
 								<Link
+									onClick={handleClickSound}
 									activeClass="active"
 									to="projects"
 									spy={true}
@@ -176,12 +176,12 @@ const ResponsiveAppBar = () => {
 							</MenuItem>{' '}
 							<MenuItem
 								className="menuLinks"
-								onClick={handleClickSound}
 								sx={{
 									fontSize: 20,
 								}}
 							>
 								<Link
+									onClick={handleClickSound}
 									activeClass="active"
 									to="skilsAndTools"
 									spy={true}
@@ -194,12 +194,12 @@ const ResponsiveAppBar = () => {
 							</MenuItem>{' '}
 							<MenuItem
 								className="menuLinks"
-								onClick={handleClickSound}
 								sx={{
 									fontSize: 20,
 								}}
 							>
 								<Link
+									onClick={handleClickSound}
 									activeClass="active"
 									to="about"
 									spy={true}
@@ -212,12 +212,12 @@ const ResponsiveAppBar = () => {
 							</MenuItem>{' '}
 							<MenuItem
 								className="menuLinks"
-								onClick={handleClickSound}
 								sx={{
 									fontSize: 20,
 								}}
 							>
 								<Link
+									onClick={handleClickSound}
 									activeClass="active"
 									to="contact"
 									spy={true}
@@ -249,12 +249,12 @@ const ResponsiveAppBar = () => {
 					>
 						<Button
 							className="menuLinks"
-							onClick={handleClickSound}
 							sx={{
 								fontSize: 20,
 							}}
 						>
 							<Link
+								onClick={handleClickSound}
 								activeClass="active"
 								to="homepage"
 								spy={true}
@@ -267,12 +267,12 @@ const ResponsiveAppBar = () => {
 						</Button>
 						<Button
 							className="menuLinks"
-							onClick={handleClickSound}
 							sx={{
 								fontSize: 20,
 							}}
 						>
 							<Link
+								onClick={handleClickSound}
 								activeClass="active"
 								to="projects"
 								spy={true}
@@ -285,12 +285,12 @@ const ResponsiveAppBar = () => {
 						</Button>
 						<Button
 							className="menuLinks"
-							onClick={handleClickSound}
 							sx={{
 								fontSize: 20,
 							}}
 						>
 							<Link
+								onClick={handleClickSound}
 								activeClass="active"
 								to="skilsAndTools"
 								spy={true}
@@ -303,12 +303,12 @@ const ResponsiveAppBar = () => {
 						</Button>
 						<Button
 							className="menuLinks"
-							onClick={handleClickSound}
 							sx={{
 								fontSize: 20,
 							}}
 						>
 							<Link
+								onClick={handleClickSound}
 								activeClass="active"
 								to="about"
 								spy={true}
@@ -321,12 +321,12 @@ const ResponsiveAppBar = () => {
 						</Button>
 						<Button
 							className="menuLinks"
-							onClick={handleClickSound}
 							sx={{
 								fontSize: 20,
 							}}
 						>
 							<Link
+								onClick={handleClickSound}
 								activeClass="active"
 								to="contact"
 								spy={true}
