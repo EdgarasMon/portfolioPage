@@ -13,7 +13,7 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 import Typography from '@mui/material/Typography';
 import type {} from '@mui/lab/themeAugmentation';
 
-export default function CustomizedTimeline() {
+export default () => {
 	return (
 		<Timeline position="alternate">
 			<TimelineItem>
@@ -95,4 +95,4 @@ export default function CustomizedTimeline() {
 			</TimelineItem>
 		</Timeline>
 	);
-}
+};

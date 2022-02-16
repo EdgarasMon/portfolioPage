@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Tooltip from '@mui/material/Tooltip';
 
-export default function SimplePaper(props: any) {
+export default () => {
 	return (
 		<React.Fragment>
 			<div className="technologyLogos">
@@ -145,4 +145,4 @@ export default function SimplePaper(props: any) {
 			</div>
 		</React.Fragment>
 	);
-}
+};

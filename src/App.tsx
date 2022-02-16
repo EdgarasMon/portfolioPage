@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import ReactDOM from 'react-dom';
 import Button from '@mui/material/Button';
 
-function App() {
+export default () => {
 	const changeTheme = () => {
 		var element = document.body;
 		element.classList.toggle('dark-mode');
@@ -74,9 +74,9 @@ function App() {
 				<Card
 					projectScreenShot="/projects/calculator/index.webp"
 					projectName="Calculator"
-					projectInfo="  This one-pager was created, by learning purposes. Functionalities: 
-				calculation of mulltiple numbers with memory board output, integrated music player, responsive and transitioning
-				 screen design."
+					projectInfo="  This one-pager was created, by learning purposes. Functionalities:
+					calculation of mulltiple numbers with memory board output, integrated music player, responsive and transitioning
+					 screen design."
 					technologiesUsed="HTML, CSS, JavaScript"
 					gitHubRepository="https://github.com/EdgarasMon/calculator"
 					siteUrl="https://edgarasmon.github.io/calculator/"
@@ -189,5 +189,4 @@ function App() {
 			</div>
 		</div>
 	);
-}
-export default App;
+};

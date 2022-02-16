@@ -2,7 +2,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 import '../sass/SocialMedia.sass';
 
-export default function SimplePaper() {
+export default () => {
 	return (
 		<React.Fragment>
 			<div className="socialLogos">
@@ -34,4 +34,4 @@ export default function SimplePaper() {
 			</div>
 		</React.Fragment>
 	);
-}
+};

@@ -29,7 +29,16 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 	}),
 }));
 
-export default function ActionAreaCard(props: any) {
+interface CardProps {
+	projectScreenShot: string;
+	projectName: string;
+	projectInfo: string;
+	technologiesUsed: string;
+	gitHubRepository: string;
+	siteUrl?: string;
+}
+
+export default (props: CardProps) => {
 	let calculatorScreenshots = [
 		'/projects/calculator/2.webp',
 		'/projects/calculator/3.webp',
@@ -129,23 +138,26 @@ export default function ActionAreaCard(props: any) {
 						<CardContent>
 							<Typography paragraph>More ScreenShots:</Typography>
 
-							{calculatorScreenshots.map((imgUrl: any, index) => {
-								return (
-									<Zoom key={index}>
-										{props.projectName == 'Calculator' && (
-											<CardMedia
-												key={index}
-												component="img"
-												alt="project picture"
-												image={imgUrl}
-											/>
-										)}
-									</Zoom>
-								);
-							})}
+							{calculatorScreenshots.map(
+								(imgUrl: string, index: number) => {
+									return (
+										<Zoom key={index}>
+											{props.projectName ==
+												'Calculator' && (
+												<CardMedia
+													key={index}
+													component="img"
+													alt="project picture"
+													image={imgUrl}
+												/>
+											)}
+										</Zoom>
+									);
+								}
+							)}
 
 							{shoppingListScreenShots.map(
-								(imgUrl: any, index: any) => {
+								(imgUrl: string, index: number) => {
 									return (
 										<Zoom key={index}>
 											{props.projectName ==
@@ -163,7 +175,7 @@ export default function ActionAreaCard(props: any) {
 							)}
 
 							{portfolioPageScreenShots.map(
-								(imgUrl: any, index: any) => {
+								(imgUrl: string, index: number) => {
 									return (
 										<Zoom key={index}>
 											{props.projectName ==
@@ -185,4 +197,4 @@ export default function ActionAreaCard(props: any) {
 			</React.Fragment>
 		</Card>
 	);
-}
+};

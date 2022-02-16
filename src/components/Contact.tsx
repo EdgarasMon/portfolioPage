@@ -14,7 +14,7 @@ init('user_iLKSGUev9BJGVQHQvEIsw');
 const SITE_KEY = '6LdUBWYeAAAAAFujSrcEyZWcs-yRCw8pLGgtRBaK';
 const messageSound = new Audio(require('../sounds/message.mp3'));
 const warningSound = new Audio(require('../sounds/warning.wav'));
-export default function ColorTextFields() {
+export default () => {
 	let window: any;
 	const [name, setName] = useState('');
 	const [subject, setSubject] = useState('');
@@ -25,19 +25,27 @@ export default function ColorTextFields() {
 	const [emailSendError, setEmailSendError] = useState(false);
 
 	// React.useEffect(() => {
-	// 	if (name) {
-	// 		setName('');
-	// 	}
-	// }, [name]);
+	//
+	//
+	//
+	// }, []);
 
-	function onFormSubmit(e: any) {
+	interface emailDetails {
+		Name: string;
+		Subject: string;
+		message: string;
+		Email: string;
+	}
+
+	const onFormSubmit = (
+		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+	) => {
 		const emailDetails = {
 			Name: name,
 			Subject: subject,
 			message: message,
 			Email: email,
 		};
-		//console.log('before check :', emailDetails);
 
 		if (
 			emailDetails.Name !== '' &&
@@ -45,14 +53,12 @@ export default function ColorTextFields() {
 			emailDetails.message !== '' &&
 			emailDetails.Email !== ''
 		) {
-			console.log(emailDetails.Name);
-			console.log(emailDetails.Name);
 			sendFeedback(emailDetails);
 			e.preventDefault();
-			window.grecaptcha.ready(function () {
+			window.grecaptcha.ready(() => {
 				window.grecaptcha
 					.execute(SITE_KEY, { action: 'submit' })
-					.then(function (token: any) {
+					.then((token: string) => {
 						// Send form value as well as token to the server
 					});
 			});
@@ -61,18 +67,18 @@ export default function ColorTextFields() {
 			warningSound.volume = 0.4;
 			warningSound.play();
 		}
-	}
+	};
 
 	const sendFeedback = (emailDetails: any) => {
 		emailjs
 			.send('service_winsl0u', 'template_m1xtu63', emailDetails)
-			.then((res: any) => {
+			.then(res => {
 				console.log('Email successfully sent!');
 				setEmailSent(true);
 				messageSound.volume = 0.4;
 				messageSound.play();
 			})
-			.catch((err: any) => {
+			.catch(err => {
 				console.error(
 					'Oh well, you failed. Here some thoughts on the error that occured:',
 					err
@@ -184,4 +190,4 @@ export default function ColorTextFields() {
 			<Box sx={{ p: 5 }}></Box>
 		</Box>
 	);
-}
+};
