@@ -1,8 +1,7 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom';
 import '../sass/SocialMedia.sass';
 
-export default () => {
+const SocialMedia = () => {
 	return (
 		<React.Fragment>
 			<div className="socialLogos">
@@ -10,28 +9,33 @@ export default () => {
 					<a
 						href="https://www.linkedin.com/in/edgarasmon/"
 						target="_blank"
+						rel="noreferrer"
 					>
 						<img
 							src="/social/linkedin.webp"
 							width="70"
 							height="70"
+							alt="linkedInnLogo"
 						/>
 					</a>
 				</figure>
 				<figure>
-					<a href="https://github.com/EdgarasMon/" target="_blank">
-						<img src="/social/git.webp" width="70" height="70" />
-					</a>
-				</figure>
-				<figure>
 					<a
-						href="https://www.facebook.com/edgaras.edga.739/"
+						href="https://github.com/EdgarasMon/"
 						target="_blank"
+						rel="noreferrer"
 					>
-						<img src="/social/fb.webp" width="70" height="70" />
+						<img
+							src="/social/git.webp"
+							width="70"
+							height="70"
+							alt="gitHubLogo"
+						/>
 					</a>
 				</figure>
 			</div>
 		</React.Fragment>
 	);
 };
+
+export default SocialMedia;

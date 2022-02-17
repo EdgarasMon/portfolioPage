@@ -1,11 +1,5 @@
-import * as Scroll from 'react-scroll';
 import { Link, animateScroll as scroll } from 'react-scroll';
-
 import * as React from 'react';
-// import { useRef, useState, useEffect, Ref } from 'react';
-// import ReactDOM from 'react-dom';
-// import { render } from 'react-dom';
-
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -18,42 +12,15 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import '../sass/AppBar.sass';
-import { alpha, styled } from '@mui/material/styles';
-import { pink } from '@mui/material/colors';
+import '../sass/App.sass';
 import Switch from '@mui/material/Switch';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+
 const clickSound = new Audio(require('../sounds/click.mp3'));
 const switchSound = new Audio(require('../sounds/switch.mp3'));
 
 const ResponsiveAppBar = () => {
-	const GreenSwitch = styled(Switch)(({ theme }) => ({
-		'& .MuiSwitch-switchBase.Mui-checked': {
-			color: pink[600],
-			'&:hover': {
-				backgroundColor: alpha(
-					pink[600],
-					theme.palette.action.hoverOpacity
-				),
-			},
-		},
-		'& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
-			backgroundColor: pink[600],
-		},
-	}));
-	const label = { inputProps: { 'aria-label': 'Switch demo' } };
-
-	// let [darkTheme, setdarkTheme] = React.useState(false);
-
-	// React.useEffect(() => {
-	// 	if (darkTheme) {
-	// 	}
-	// }, [darkTheme]);
-
-	// const handleDarkThemeSwitch = () => {};
-
-	// const handleDarkTheme = () => {};
-
 	let [soundOn, setSoundOn] = React.useState(false);
 
 	React.useEffect(() => {
@@ -364,12 +331,10 @@ const ResponsiveAppBar = () => {
 
 					<Box sx={{ flexGrow: 2 }}>
 						<Switch
-							{...label}
 							color="default"
 							type="checkbox"
+							className="dark-mode-toggle"
 							onClick={handleSwitchSound}
-							// onChange={handleDarkThemeSwitch}
-							// checked={darkTheme}
 						/>
 
 						<NightlightIcon sx={{ fontSize: 20, m: -0.8 }} />
@@ -377,7 +342,6 @@ const ResponsiveAppBar = () => {
 						<Switch
 							id="muteSound"
 							sx={{ fontSize: 20, ml: 3 }}
-							{...label}
 							color="default"
 							onChange={handleToggleSoundSwitch}
 							checked={soundOn}

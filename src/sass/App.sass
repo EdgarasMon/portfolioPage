@@ -7,6 +7,7 @@ $skillsAndToolsColor: #b9bbff
 $aboutColor: #c5c7ff
 $contactColor: #d2d3ff
 
+$darkBlueColor: #000246    
 $whiteColor: #fff
 $blackColor: #000000
 $neonBlueColor: #099FFF
@@ -14,6 +15,7 @@ $neonBlueColor: #099FFF
 $displayFlex: flex
 $displayGrid: grid
 
+    
 html, body 
     min-height: 100%
     min-width: 100%
@@ -23,9 +25,8 @@ html, body
 .container	
     display: flex
     flex-direction: column
-    //background-repeat: inherit
     background-size: cover
-    background: $wawesColor
+    background:  $wawesColor
 
 body::-webkit-scrollbar 
   width: 10px
@@ -65,7 +66,7 @@ h1, h2
     fill: $wawesColor
 
 .homepage
-    background-color: $homepageColor
+    background-color: var(--background-color)
     position: relative
     z-index: 1
     display: flex
@@ -74,6 +75,12 @@ h1, h2
     justify-content: center
     align-items: baseline
 
+.homepage[data-theme='light']    
+    background-color: #a1a3f2
+
+[data-theme='dark'] 
+    --background-color: #000246 
+    
 .homepageText
     margin-top: 200px 
     font-family: 'Bungee Inline', cursive
@@ -104,7 +111,13 @@ h1, h2
     height: auto
 
 .portfolioTittle
-    background: $projectsColor
+    background: var(--background-color)
+
+.portfolioTittle[data-theme='light']    
+    background-color: #adafff   
+
+[data-theme='dark'] 
+    --background-color: #000246 
 
 .projects 
     display: flex
@@ -113,7 +126,7 @@ h1, h2
     flex-wrap: wrap
     justify-items: center
     background: inherit
-    background-color: $projectsColor
+    background-color: var(--background-color)
     color: $whiteColor
     position: relative
     z-index: 1
@@ -132,13 +145,25 @@ h1, h2
     transform-origin: 32
     z-index: -1
 
+[data-theme='light']    
+    background-color: #adafff   
+
+[data-theme='dark'] 
+    --background-color: #000246 
+
 .skillsTittle
-     background: $skillsAndToolsColor 
+     background: var(--background-color)
+
+.skillsTittle[data-theme='light']    
+    background-color: #b9bbff  
+
+[data-theme='dark'] 
+    --background-color: #000246      
 
 .skilsAndTools
     display: flex
     background: inherit
-    background-color: $skillsAndToolsColor
+    background-color: var(--background-color)
     z-index: 1	
     height: auto
     justify-content: center
@@ -149,13 +174,31 @@ h1, h2
 .skilsAndToolsChild
     margin-bottom: 50px    
 
+.skilsAndTools[data-theme='light']    
+    background-color: #b9bbff 
+
+[data-theme='dark'] 
+    --background-color: #000246    
+
 .aboutContainer
-    background: $aboutColor
+    background: var(--background-color)
     display: flex
     justify-content: center
 
+.aboutContainer[data-theme='light']    
+    background-color: #c5c7ff
+
+[data-theme='dark'] 
+    --background-color: #000246     
+
 .aboutTittle
-    background: $aboutColor       
+    background: var(--background-color)   
+
+.aboutTittle[data-theme='light']    
+    background-color: #c5c7ff
+
+[data-theme='dark'] 
+    --background-color: #000246            
 
 .about
     width: 700px
@@ -168,13 +211,24 @@ h1, h2
     text-align: justify
     padding: 2%
 
+//    
+
+.contactForm
+    background-color: #d2d3ff
+
 .contact
     display: flex
-    background-color: $contactColor
+    background-color: var(--background-color)
     position: relative
     flex-direction: row
     flex-wrap: wrap
     justify-content: center    
+
+.contact[data-theme='light']    
+    background-color: #d2d3ff
+
+[data-theme='dark'] 
+    --background-color: #000246    
 
 .getInTouchContainer
     display: flex
@@ -246,5 +300,6 @@ h1, h2
     
 // .grecaptcha-badge 
 //     visibility: hidden
+
 
 

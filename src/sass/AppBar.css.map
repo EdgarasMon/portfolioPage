@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAEA,AAAA,UAAU,AAAA,MAAM,CAAC;EAChB,OAAO,EAAE,eAAe;EACxB,aAAa,EAAE,GAAG,CAAC,KAAK,CAJT,OAAO;CAIoB;;AAG3C,AAAA,OAAO,AAAA,MAAM,CAAC;EACb,OAAO,EAAE,eAAe;EACxB,aAAa,EAAE,GAAG,CAAC,KAAK,CATT,OAAO;CASoB",
-    "sources": [
-        "AppBar.sass"
-    ],
-    "names": [],
-    "file": "AppBar.css"
-}

@@ -1,7 +1,5 @@
 import * as React from 'react';
 import Alert from '@mui/material/Alert';
-import Collapse from '@mui/material/Collapse';
-import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
 import '../sass/App.sass';
 import TextField from '@mui/material/TextField';
@@ -23,12 +21,6 @@ export default () => {
 
 	const [emailSent, setEmailSent] = useState(false);
 	const [emailSendError, setEmailSendError] = useState(false);
-
-	// React.useEffect(() => {
-	//
-	//
-	//
-	// }, []);
 
 	interface emailDetails {
 		Name: string;

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import useLocalStorage from 'use-local-storage';
 import AppBar from './components/AppBar';
 import Card from './components/Card';
 import Paper from './components/PaperTabs';
@@ -6,24 +7,30 @@ import Contact from './components/Contact';
 import TimeLine from './components/TimeLine';
 import SocialMedia from './components/SocialMedia';
 import './sass/App.sass';
-//import './sass/AppDark.sass';
 import './sass/Card.sass';
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
-import ReactDOM from 'react-dom';
 import Button from '@mui/material/Button';
 
-export default () => {
-	const changeTheme = () => {
-		var element = document.body;
-		element.classList.toggle('dark-mode');
+const App = () => {
+	const defaultDark = window.matchMedia(
+		'(prefers-color-scheme: dark)'
+	).matches;
+	const [theme, setTheme] = useLocalStorage(
+		'theme',
+		defaultDark ? 'dark' : 'light'
+	);
+
+	const switchTheme = () => {
+		const newTheme = theme === 'light' ? 'dark' : 'light';
+		setTheme(newTheme);
 	};
 
 	return (
 		<div className="container">
 			<AppBar />
 
-			<div className="homepage">
+			<div className="homepage" data-theme={theme}>
 				<div>
 					<div className="homepageText">
 						<p>Hi, I'm Edgaras,</p>
@@ -37,7 +44,9 @@ export default () => {
 				</div>
 				<div>
 					<TimeLine />
-					<Button onClick={changeTheme}>theme change</Button>
+					<button onClick={switchTheme}>
+						Switch to {theme === 'light' ? 'Dark' : 'Lignt'} theme
+					</button>
 				</div>
 
 				<div className="topDecoration">
@@ -65,16 +74,17 @@ export default () => {
 				</div>
 			</div>
 
-			<div className="portfolioTittle">
+			<div className="portfolioTittle" data-theme={theme}>
 				<Tooltip title="My projects">
 					<h1> 💼 </h1>
 				</Tooltip>
 			</div>
-			<Box className="projects">
+			<Box className="projects" data-theme={theme}>
 				<Card
 					projectScreenShot="/projects/calculator/index.webp"
 					projectName="Calculator"
-					projectInfo="  This one-pager was created, by learning purposes. Functionalities:
+					projectInfo="❓ This one-pager was created, by learning purposes. 
+					Features are
 					calculation of mulltiple numbers with memory board output, integrated music player, responsive and transitioning
 					 screen design."
 					technologiesUsed="HTML, CSS, JavaScript"
@@ -85,8 +95,8 @@ export default () => {
 				<Card
 					projectScreenShot="/projects/shoppingList/dashboard.webp"
 					projectName="Shopping-List"
-					projectInfo="Site is created for taking notes of grocery products. Site is for 
-				registered users, but non-registerd users can try it too. Functionalities: Add products from text inputs or search
+					projectInfo="❓ Site is created for taking notes of grocery products. Site is for 
+				registered users, but non-registerd users can try it too. Features: Add products from text inputs or search
 				products from database and add them too. Then you can save lists to your account and delete them."
 					technologiesUsed="HTML, CSS, JavaScript, localStorage, MongoDB, NodeJS"
 					gitHubRepository="https://github.com/EdgarasMon/ShoppingList"
@@ -95,29 +105,32 @@ export default () => {
 				<Card
 					projectScreenShot="/projects/portfolioPage/portfolio.webp"
 					projectName="Portfolio-Page"
-					projectInfo="Site is created for projects showing purposes. Functionalities: 
+					projectInfo="❓ Site is created for projects showing purposes. Features: 
 					interactive React and Material UI components and design, Contact form for sending email."
 					technologiesUsed="React, TypeScript, Material UI, SASS, EmailJS, reCaptcha-V3"
 					gitHubRepository="https://github.com/EdgarasMon/portfolioPage"
 				/>
 			</Box>
 
-			<div className="skillsTittle">
+			<div className="skillsTittle" data-theme={theme}>
 				<Tooltip title="technical skills / tools">
 					<h1>🖥️ 🔧</h1>
 				</Tooltip>
-				<div className="skilsAndTools">
+				<div className="skilsAndTools" data-theme={theme}>
 					<Paper />
-					<div className="skilsAndToolsChild"></div>
+					<div
+						className="skilsAndToolsChild"
+						data-theme={theme}
+					></div>
 				</div>
 			</div>
 
-			<div className="aboutTittle">
+			<div className="aboutTittle" data-theme={theme}>
 				<Tooltip title="about Me">
 					<h1>🤷</h1>
 				</Tooltip>
 			</div>
-			<div className="aboutContainer">
+			<div className="aboutContainer" data-theme={theme}>
 				<div className="about">
 					{' '}
 					I'm an ambitious, persistant, Web Systems focused developer.
@@ -131,7 +144,7 @@ export default () => {
 				</div>
 			</div>
 
-			<div className="contact">
+			<div className="contact" data-theme={theme}>
 				<div className="socialMedia">
 					<Tooltip title="social media">
 						<h1>📲</h1>
@@ -190,3 +203,5 @@ export default () => {
 		</div>
 	);
 };
+
+export default App;

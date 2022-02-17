@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import '../sass/Project.sass';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -38,7 +38,7 @@ interface CardProps {
 	siteUrl?: string;
 }
 
-export default (props: CardProps) => {
+const Project = (props: CardProps) => {
 	let calculatorScreenshots = [
 		'/projects/calculator/2.webp',
 		'/projects/calculator/3.webp',
@@ -95,14 +95,14 @@ export default (props: CardProps) => {
 						variant="body2"
 						color="text.primary"
 					>
-						⚙️: {props.technologiesUsed}
+						⚙️ {props.technologiesUsed}
 					</Typography>
 					<Box component="span" sx={{ display: 'inline' }}>
-						💾:{' '}
+						💾{' '}
 						<a href={props.gitHubRepository}>Github repository</a>
 					</Box>
 
-					<a href={props.siteUrl} target="_blank">
+					<a href={props.siteUrl} target="_blank" rel="noreferrer">
 						<Button
 							href={props.siteUrl}
 							component="span"
@@ -142,7 +142,7 @@ export default (props: CardProps) => {
 								(imgUrl: string, index: number) => {
 									return (
 										<Zoom key={index}>
-											{props.projectName ==
+											{props.projectName ===
 												'Calculator' && (
 												<CardMedia
 													key={index}
@@ -160,7 +160,7 @@ export default (props: CardProps) => {
 								(imgUrl: string, index: number) => {
 									return (
 										<Zoom key={index}>
-											{props.projectName ==
+											{props.projectName ===
 												'Shopping-List' && (
 												<CardMedia
 													key={index}
@@ -178,7 +178,7 @@ export default (props: CardProps) => {
 								(imgUrl: string, index: number) => {
 									return (
 										<Zoom key={index}>
-											{props.projectName ==
+											{props.projectName ===
 												'Portfolio-Page' && (
 												<CardMedia
 													key={index}
@@ -198,3 +198,5 @@ export default (props: CardProps) => {
 		</Card>
 	);
 };
+
+export default Project;
