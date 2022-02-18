@@ -5,14 +5,16 @@ import '../sass/App.sass';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { init } from '@emailjs/browser';
+
 init('user_iLKSGUev9BJGVQHQvEIsw');
 const SITE_KEY = '6LdUBWYeAAAAAFujSrcEyZWcs-yRCw8pLGgtRBaK';
 const messageSound = new Audio(require('../sounds/message.mp3'));
 const warningSound = new Audio(require('../sounds/warning.wav'));
-export default () => {
+
+const Contact = () => {
 	let window: any;
 	const [name, setName] = useState('');
 	const [subject, setSubject] = useState('');
@@ -21,13 +23,6 @@ export default () => {
 
 	const [emailSent, setEmailSent] = useState(false);
 	const [emailSendError, setEmailSendError] = useState(false);
-
-	interface emailDetails {
-		Name: string;
-		Subject: string;
-		message: string;
-		Email: string;
-	}
 
 	const onFormSubmit = (
 		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -50,9 +45,7 @@ export default () => {
 			window.grecaptcha.ready(() => {
 				window.grecaptcha
 					.execute(SITE_KEY, { action: 'submit' })
-					.then((token: string) => {
-						// Send form value as well as token to the server
-					});
+					.then((token: string) => {});
 			});
 		} else {
 			setEmailSendError(true);
@@ -183,3 +176,5 @@ export default () => {
 		</Box>
 	);
 };
+
+export default Contact;

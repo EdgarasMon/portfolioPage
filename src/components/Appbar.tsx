@@ -1,4 +1,4 @@
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -21,10 +21,6 @@ const clickSound = new Audio(require('../sounds/click.mp3'));
 const switchSound = new Audio(require('../sounds/switch.mp3'));
 
 const ResponsiveAppBar = ({ switchTheme }: any) => {
-	const defaultDark = window.matchMedia(
-		'(prefers-color-scheme: dark)'
-	).matches;
-
 	let [soundOn, setSoundOn] = React.useState(false);
 
 	React.useEffect(() => {

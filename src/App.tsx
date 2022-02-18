@@ -11,15 +11,11 @@ import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
 
 const App = () => {
-	const defaultDark = window.matchMedia(
-		'(prefers-color-scheme: dark)'
-	).matches;
-
 	const [theme, setTheme] = useState('light');
 
 	const switchTheme = () => {
 		setTheme('dark');
-		if (theme == 'dark') {
+		if (theme === 'dark') {
 			setTheme('light');
 		}
 	};
