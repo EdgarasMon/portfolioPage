@@ -20,7 +20,11 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 const clickSound = new Audio(require('../sounds/click.mp3'));
 const switchSound = new Audio(require('../sounds/switch.mp3'));
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = ({ switchTheme }: any) => {
+	const defaultDark = window.matchMedia(
+		'(prefers-color-scheme: dark)'
+	).matches;
+
 	let [soundOn, setSoundOn] = React.useState(false);
 
 	React.useEffect(() => {
@@ -33,25 +37,20 @@ const ResponsiveAppBar = () => {
 		if (soundOn) {
 			switchSound.volume = 0.4;
 			switchSound.play();
-			console.log('sound playing');
 		}
 	};
 
 	const handleClickSound = () => {
-		console.log('inside handleClickSound');
 		if (soundOn) {
 			clickSound.volume = 0.4;
 			clickSound.play();
-			console.log('sound playing');
 		}
 	};
 
 	const handleToggleSoundSwitch = () => {
 		if (soundOn) {
-			console.log('soundOn ', soundOn);
 			setSoundOn(false);
 		} else {
-			console.log('soundOn ', soundOn);
 			setSoundOn(true);
 		}
 	};
@@ -331,18 +330,19 @@ const ResponsiveAppBar = () => {
 
 					<Box sx={{ flexGrow: 2 }}>
 						<Switch
-							color="default"
 							type="checkbox"
+							color="default"
 							className="dark-mode-toggle"
 							onClick={handleSwitchSound}
+							onChange={switchTheme}
 						/>
 
 						<NightlightIcon sx={{ fontSize: 20, m: -0.8 }} />
 
 						<Switch
 							id="muteSound"
-							sx={{ fontSize: 20, ml: 3 }}
 							color="default"
+							sx={{ fontSize: 20, ml: 3 }}
 							onChange={handleToggleSoundSwitch}
 							checked={soundOn}
 						/>

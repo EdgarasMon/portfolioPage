@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import useLocalStorage from 'use-local-storage';
 import AppBar from './components/AppBar';
 import Card from './components/Card';
 import Paper from './components/PaperTabs';
@@ -10,25 +9,24 @@ import './sass/App.sass';
 import './sass/Card.sass';
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
-import Button from '@mui/material/Button';
 
 const App = () => {
 	const defaultDark = window.matchMedia(
 		'(prefers-color-scheme: dark)'
 	).matches;
-	const [theme, setTheme] = useLocalStorage(
-		'theme',
-		defaultDark ? 'dark' : 'light'
-	);
+
+	const [theme, setTheme] = useState('light');
 
 	const switchTheme = () => {
-		const newTheme = theme === 'light' ? 'dark' : 'light';
-		setTheme(newTheme);
+		setTheme('dark');
+		if (theme == 'dark') {
+			setTheme('light');
+		}
 	};
 
 	return (
 		<div className="container">
-			<AppBar />
+			<AppBar switchTheme={switchTheme} />
 
 			<div className="homepage" data-theme={theme}>
 				<div>
@@ -44,9 +42,6 @@ const App = () => {
 				</div>
 				<div>
 					<TimeLine />
-					<button onClick={switchTheme}>
-						Switch to {theme === 'light' ? 'Dark' : 'Lignt'} theme
-					</button>
 				</div>
 
 				<div className="topDecoration">
@@ -109,6 +104,7 @@ const App = () => {
 					interactive React and Material UI components and design, Contact form for sending email."
 					technologiesUsed="React, TypeScript, Material UI, SASS, EmailJS, reCaptcha-V3"
 					gitHubRepository="https://github.com/EdgarasMon/portfolioPage"
+					siteUrl="http://www.edgarasmonkus.com"
 				/>
 			</Box>
 

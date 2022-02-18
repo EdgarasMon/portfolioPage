@@ -19,6 +19,8 @@ const SocialMedia = () => {
 						/>
 					</a>
 				</figure>
+				<br />
+				<br />
 				<figure>
 					<a
 						href="https://github.com/EdgarasMon/"
