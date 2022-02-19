@@ -100,7 +100,7 @@ const App = () => {
 					interactive React and Material UI components and design, Contact form for sending email."
 					technologiesUsed="React, TypeScript, Material UI, SASS, EmailJS, reCaptcha-V3"
 					gitHubRepository="https://github.com/EdgarasMon/portfolioPage"
-					siteUrl="http://www.edgarasmonkus.com"
+					siteUrl="null"
 				/>
 			</Box>
 

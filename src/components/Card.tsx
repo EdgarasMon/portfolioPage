@@ -65,7 +65,7 @@ const Project = (props: CardProps) => {
 			className="project"
 			sx={{
 				maxWidth: 320,
-				margin: 3,
+				margin: 2,
 				Height: 'auto',
 				borderRadius: 3,
 				background: '#d2d3ff',
