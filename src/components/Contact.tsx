@@ -87,7 +87,7 @@ const Contact = () => {
 				<TextField
 					type="text"
 					name="Subject"
-					placeholder="About your Experience / Projects"
+					placeholder="About projects / experience"
 					onChange={e => setSubject(e.target.value)}
 					label="Subject"
 					required
@@ -147,7 +147,7 @@ const Contact = () => {
 						</Alert>
 					)}
 				</Box>
-				<Box sx={{ mt: 2 }}>
+				<Box sx={{ mt: 0 }}>
 					{emailSendError && (
 						<Alert
 							severity="error"
@@ -159,7 +159,7 @@ const Contact = () => {
 						</Alert>
 					)}
 				</Box>
-				<Box sx={{ mt: 2 }}>
+				<Box sx={{ mt: 1 }}>
 					{emailSendError && (
 						<Alert
 							severity="warning"
@@ -172,7 +172,7 @@ const Contact = () => {
 					)}
 				</Box>
 			</div>
-			<Box sx={{ p: 5 }}></Box>
+			<Box sx={{ p: 2 }}></Box>
 		</Box>
 	);
 };

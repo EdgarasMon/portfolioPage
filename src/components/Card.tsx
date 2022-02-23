@@ -129,14 +129,14 @@ const Project = (props: CardProps) => {
 						aria-label="show more"
 						sx={{ left: 120, mt: 1.5 }}
 					>
-						<Tooltip title="More ScreenShots..">
+						<Tooltip title="Screenshots..">
 							<ExpandMoreIcon sx={{ right: 40 }} />
 						</Tooltip>
 					</ExpandMore>
 
 					<Collapse in={expanded} timeout="auto" unmountOnExit>
 						<CardContent>
-							<Typography paragraph>More ScreenShots:</Typography>
+							<Typography paragraph>Screenshots:</Typography>
 
 							{calculatorScreenshots.map(
 								(imgUrl: string, index: number) => {

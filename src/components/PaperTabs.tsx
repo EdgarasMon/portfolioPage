@@ -7,6 +7,40 @@ export default () => {
 			<div className="technologyLogos">
 				<figure>
 					<img
+						src="/technologies/javas.webp"
+						width="90"
+						height="90"
+						alt="technologyLogo"
+					/>
+				</figure>
+				<figure>
+					<img
+						src="/technologies/typescript.webp"
+						width="90"
+						height="90"
+						alt="technologyLogo"
+					/>
+				</figure>
+				<figure>
+					<img
+						src="/technologies/react.webp"
+						width="90"
+						height="90"
+						alt="technologyLogo"
+					/>
+				</figure>
+				<figure>
+					<Tooltip title="'Redux'">
+						<img
+							src="/technologies/redux.webp"
+							width="90"
+							height="90"
+							alt="technologyLogo"
+						/>
+					</Tooltip>
+				</figure>
+				<figure>
+					<img
 						src="/technologies/html.webp"
 						width="90"
 						height="90"
@@ -30,30 +64,6 @@ export default () => {
 							alt="technologyLogo"
 						/>
 					</Tooltip>
-				</figure>
-				<figure>
-					<img
-						src="/technologies/javas.webp"
-						width="90"
-						height="90"
-						alt="technologyLogo"
-					/>
-				</figure>
-				<figure>
-					<img
-						src="/technologies/typescript.webp"
-						width="90"
-						height="90"
-						alt="technologyLogo"
-					/>
-				</figure>
-				<figure>
-					<img
-						src="/technologies/react.webp"
-						width="90"
-						height="90"
-						alt="technologyLogo"
-					/>
 				</figure>
 				<figure>
 					<img
@@ -112,6 +122,26 @@ export default () => {
 						alt="toolsLogo"
 					/>
 				</figure>
+				<Tooltip title="'npm' package manager for Node.js">
+					<figure>
+						<img
+							src="/tools/npm.webp"
+							width="90"
+							height="90"
+							alt="toolsLogo"
+						/>
+					</figure>
+				</Tooltip>
+				<Tooltip title="'dev tools' Developer tools or are programs that allow a developer to create, test and debug software ">
+					<figure>
+						<img
+							src="/tools/dev.webp"
+							width="90"
+							height="90"
+							alt="toolsLogo"
+						/>
+					</figure>
+				</Tooltip>
 				<Tooltip title="'localstorage' browser storage ">
 					<figure>
 						<img

@@ -1,16 +1,34 @@
 $aboutColor: #c5c7ff
     
-.socialLogos figure img 
+.socialLogos figure svg 
     -webkit-transition: .3s ease-in-out
-    transition: .3s ease-in-out
+    transition: .1s ease-in-out
 
-.socialLogos figure:hover img 
-    transform: rotate(0) scale(1.4)
+.socialLogos figure:hover svg
+    transform: scale(1.15)
 
 .socialLogos 
     display: flex
     flex-direction: column
-    background: $aboutColor
-    border-radius: 8px
-    padding: 100px
+    background: #c5c7ff    
+    border-radius: 8px        
     margin: 38px
+    height: 80% 
+    justify-content: center
+    height: 80%
+    padding: 0px 140px
+
+
+@media screen and (max-width: 700px) 
+    .socialLogos
+        display: flex
+        flex-direction: row
+        align-items: center
+        border-radius: 8px    
+        gap: 50px
+        padding: 0px 65px
+        margin: 0 0 50px 0
+    .socialMedia
+        margin-bottom: 35px
+    .socialMediaTitle
+        display: none    

@@ -318,7 +318,7 @@ const ResponsiveAppBar = ({ switchTheme }: any) => {
 									offset={-64}
 									duration={2000}
 								>
-									📲 📧
+									📧 📲
 								</Link>
 							</Button>
 						</Tooltip>
@@ -328,16 +328,19 @@ const ResponsiveAppBar = ({ switchTheme }: any) => {
 						<Switch
 							type="checkbox"
 							color="default"
-							className="dark-mode-toggle"
+							className="soundSwitch"
+							role="switch"
+							aria-checked="false"
 							onClick={handleSwitchSound}
 							onChange={switchTheme}
 						/>
-
 						<NightlightIcon sx={{ fontSize: 20, m: -0.8 }} />
 
 						<Switch
 							id="muteSound"
 							color="default"
+							role="switch"
+							aria-checked="false"
 							sx={{ fontSize: 20, ml: 3 }}
 							onChange={handleToggleSoundSwitch}
 							checked={soundOn}

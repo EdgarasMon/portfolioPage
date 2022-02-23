@@ -74,10 +74,8 @@ const App = () => {
 				<Card
 					projectScreenShot="/projects/calculator/index.webp"
 					projectName="Calculator"
-					projectInfo="❓ This one-pager was created, by learning purposes. 
-					Features are
-					calculation of mulltiple numbers with memory board output, integrated music player, responsive and transitioning
-					 screen design."
+					projectInfo="❓ This one-pager was created, for learning purposes. Features: calculation of 
+					mulltiple numbers with memory board output, integrated music player, responsive and transitioning screen design"
 					technologiesUsed="HTML, CSS, JavaScript"
 					gitHubRepository="https://github.com/EdgarasMon/calculator"
 					siteUrl="https://edgarasmon.github.io/calculator/"
@@ -86,11 +84,12 @@ const App = () => {
 				<Card
 					projectScreenShot="/projects/shoppingList/dashboard.webp"
 					projectName="Shopping-List"
-					projectInfo="❓ Site is created for taking notes of grocery products. Site is for 
-				registered users, but non-registerd users can try it too. Features: Add products from text inputs or search
-				products from database and add them too. Then you can save lists to your account and delete them."
+					projectInfo="❓ This app lets you to take notes of grocery products. App is for registered users, 
+					but non-registerd users can use it too. Functionalities: Add products from text inputs or search 
+					products from database and add them too. Then you can save lists to your account and delete them."
 					technologiesUsed="HTML, CSS, JavaScript, localStorage, MongoDB, NodeJS"
 					gitHubRepository="https://github.com/EdgarasMon/ShoppingList"
+					siteUrl="working on deployment"
 				/>
 
 				<Card
@@ -100,7 +99,7 @@ const App = () => {
 					interactive React and Material UI components and design, Contact form for sending email."
 					technologiesUsed="React, TypeScript, Material UI, SASS, EmailJS, reCaptcha-V3"
 					gitHubRepository="https://github.com/EdgarasMon/portfolioPage"
-					siteUrl="null"
+					siteUrl="https://www.edgarasmonkus.com/"
 				/>
 			</Box>
 
@@ -124,26 +123,26 @@ const App = () => {
 			</div>
 			<div className="aboutContainer" data-theme={theme}>
 				<div className="about">
-					{' '}
-					I'm an ambitious, persistant, Web Systems focused developer.
-					Also experienced telecommunications engineer with a
-					demonstrated history of working in this industry. Skilled in
-					network installation, FTTH-GPON ect. Bachelor's degree in IT
-					from ŠU University. My motivation is passion for learning
-					new technologies and adapting them in projects I create. I
-					love to design, make front-end and back-end. I'm seeking an
-					entry-level role as a full-stack or front-end developer.
+					👋 Hi, I’m Edgaras. I'm looking for a job as a Web
+					developer. My goal is simple: learn to be a great coder and
+					have fun along the way. <br />
+					<br /> 💻 Why? Because Code + Ideas = Reality.
+					<br />
+					<br /> 📋 I'm a Web development enthusiast creating full
+					scope projects that include Front-end, Back-end, databases
+					and design. I absolutely love building products that make my
+					ideas come true.
+					<br />
+					<br /> 📞 I was previously working as a telecommunication
+					engineer so I have a deep understanding in networking, have
+					knowledge about FTTH, GPON, etc. technologies.
+					<br />
+					<br /> 🔍 I'm seeking an entry-level role as a full-stack or
+					front-end developer. Let’s talk 😉
 				</div>
 			</div>
 
 			<div className="contact" data-theme={theme}>
-				<div className="socialMedia">
-					<Tooltip title="social media">
-						<h1>📲</h1>
-					</Tooltip>
-					<SocialMedia />
-				</div>
-
 				<div className="getInTouchContainer">
 					<Tooltip title="contact">
 						<h1>📧</h1>
@@ -152,16 +151,20 @@ const App = () => {
 					<p className="getInTouchChild">
 						<span>Get In Touch</span>
 						<br />
-						Dropping a line to say Hi, ask for my resume or see if
-						we can build something amazing together? I'd love to
-						hear it from you! Fill in your info in the form below
-						and I look forward to hearing from you!
+						Hey, have an idea? Coffe on me ☕
 					</p>
 					<div className="getInTouchForm">
 						<Contact />
 					</div>
 				</div>
 				<br />
+
+				<div className="socialMedia">
+					<Tooltip title="social media">
+						<h1 className="socialMediaTitle">📲</h1>
+					</Tooltip>
+					<SocialMedia />
+				</div>
 			</div>
 
 			<div className="footer">

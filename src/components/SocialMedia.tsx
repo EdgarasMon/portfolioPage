@@ -1,5 +1,7 @@
 import * as React from 'react';
 import '../sass/SocialMedia.sass';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const SocialMedia = () => {
 	return (
@@ -11,12 +13,7 @@ const SocialMedia = () => {
 						target="_blank"
 						rel="noreferrer"
 					>
-						<img
-							src="/social/linkedin.webp"
-							width="70"
-							height="70"
-							alt="linkedInnLogo"
-						/>
+						<LinkedInIcon sx={{ fontSize: 50, color: '#8185f3' }} />
 					</a>
 				</figure>
 				<br />
@@ -27,12 +24,7 @@ const SocialMedia = () => {
 						target="_blank"
 						rel="noreferrer"
 					>
-						<img
-							src="/social/git.webp"
-							width="70"
-							height="70"
-							alt="gitHubLogo"
-						/>
+						<GitHubIcon sx={{ fontSize: 50, color: '#8185f3' }} />
 					</a>
 				</figure>
 			</div>
